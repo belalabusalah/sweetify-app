@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sweetify_app/view/screens/auth_screens/sign_in.dart';
+import 'package:sweetify_app/view/screens/auth_screens/sign_up.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
+import 'package:sweetify_app/view/screens/determine_entry_screen.dart';
 
 
 SharedPreferences? sharedprefe;
@@ -32,6 +35,9 @@ class MyApp extends StatelessWidget {
           initialRoute: "/splashScreen",
           getPages: [
             GetPage(name: "/splashScreen", page: () => SplashScreen()),
+            GetPage(name: "/determineEntryScreen", page: () => DetermineEntryScreen()),
+            GetPage(name: "/signIn", page: () => SignIn()),
+            GetPage(name: "/signUp", page: () => SignUp()),
           ],
         );
       },
