@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
@@ -14,12 +15,12 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("sign in")),
       body: Padding(
         padding: EdgeInsets.all(16.0.r),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 50.h),
               Image(image: AssetImage("images/Welcome Back!.png")),
               SizedBox(height: 40.h),
               CustomTextFormField(
@@ -119,7 +120,7 @@ class SignInScreen extends StatelessWidget {
                     color: Color(0xFFA99577),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {Get.toNamed("/signUpScreen");},
                     child: AppText.caption("Sign Up"),
                   ),
                 ],

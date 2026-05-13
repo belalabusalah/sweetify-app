@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
               page: () => DetermineEntryScreen(),
             ),
             GetPage(name: "/signIn", page: () => SignInScreen()),
-            GetPage(name: "/signUp", page: () => SignUp()),
+            GetPage(name: "/signUpScreen", page: () => SignUpScreen()),
           ],
         );
       },

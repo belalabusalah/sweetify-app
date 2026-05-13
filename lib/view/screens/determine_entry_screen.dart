@@ -15,7 +15,6 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Padding(
         padding: EdgeInsets.all(29.0.r),
         child: Column(
@@ -44,7 +43,7 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
               text: 'Create Account',
               onPressed: () {
                 setState(() {
-                  Get.toNamed("/signUp");
+                  Get.toNamed("/signUpScreen");
                 });
               },
               color: Color(0xFF483028),
