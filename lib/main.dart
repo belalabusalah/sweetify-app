@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sweetify_app/view/screens/auth_screens/sign_in.dart';
+import 'package:get/instance_manager.dart';
+import 'package:sweetify_app/%20services/settings_services.dart';
+import 'package:sweetify_app/utils/mu_bindings.dart';
+import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_up.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
 import 'package:sweetify_app/view/screens/determine_entry_screen.dart';
 
-
-SharedPreferences? sharedprefe;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  sharedprefe =  await SharedPreferences.getInstance();
-
+  await initalServices();
   runApp(const MyApp());
+}
+
+Future initalServices() async {
+  await Get.putAsync(() => SettingsServices().initSharedPreferences());
 }
 
 class MyApp extends StatelessWidget {
@@ -33,10 +37,14 @@ class MyApp extends StatelessWidget {
             colorScheme: .fromSeed(seedColor: Colors.deepPurple),
           ),
           initialRoute: "/splashScreen",
+          initialBinding: MuBindings(),
           getPages: [
             GetPage(name: "/splashScreen", page: () => SplashScreen()),
-            GetPage(name: "/determineEntryScreen", page: () => DetermineEntryScreen()),
-            GetPage(name: "/signIn", page: () => SignIn()),
+            GetPage(
+              name: "/determineEntryScreen",
+              page: () => DetermineEntryScreen(),
+            ),
+            GetPage(name: "/signIn", page: () => SignInScreen()),
             GetPage(name: "/signUp", page: () => SignUp()),
           ],
         );
