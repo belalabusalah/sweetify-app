@@ -12,6 +12,7 @@ import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.dart';
 import 'package:sweetify_app/view/screens/home_screen.dart';
+import 'package:sweetify_app/view/screens/privacy_policy_screen.dart';
 import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
 
 void main() async {
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/homeScreen", page: () => HomeScreen()),
             GetPage(name: "/profileScreen", page: () => ProfileScreen()),
             GetPage(name: "/aboutUsScreen", page: () => AboutUsScreen()),
+            GetPage(name: "/privacyPolicyScreen", page: () => PrivacyPolicyScreen()),
           ],
         );
       },

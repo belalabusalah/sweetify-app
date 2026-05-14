@@ -32,9 +32,12 @@ class ProfileMoreSection extends StatelessWidget {
         ),
 
         // Privacy Policy
-        const ProfileTile(
+         ProfileTile(
           icon: Icons.privacy_tip,
           title: "Privacy Policy",
+           onTap: (){
+            Get.toNamed("/privacyPolicyScreen");
+           },
         ),
 
         // Terms & Conditions

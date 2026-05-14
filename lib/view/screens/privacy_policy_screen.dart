@@ -1,0 +1,79 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:sweetify_app/%20services/privacy_policy_services.dart';
+import 'package:sweetify_app/model/privacy_policy_model.dart';
+
+class PrivacyPolicyScreen extends StatefulWidget {
+  const PrivacyPolicyScreen({super.key});
+
+  @override
+  State<PrivacyPolicyScreen> createState() =>
+      _PrivacyPolicyScreenState();
+}
+
+class _PrivacyPolicyScreenState
+    extends State<PrivacyPolicyScreen> {
+
+  late Future<PrivacyPolicyModel> privacyPolicyFuture;
+
+  @override
+  void initState() {
+    super.initState();
+
+    privacyPolicyFuture =
+        PrivacyPolicyServices().getPrivacyPolicy();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+
+      appBar: AppBar(
+        title: const Text("Privacy Policy"),
+      ),
+
+      body: FutureBuilder<PrivacyPolicyModel>(
+
+        future: privacyPolicyFuture,
+
+        builder: (context, snapshot) {
+
+          if (snapshot.connectionState ==
+              ConnectionState.waiting) {
+
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          if (snapshot.hasError) {
+
+            return Center(
+              child: Text(
+                snapshot.error.toString(),
+              ),
+            );
+          }
+
+          if (!snapshot.hasData) {
+
+            return const Center(
+              child: Text("No Data"),
+            );
+          }
+
+          final privacyPolicy = snapshot.data!;
+
+          return SingleChildScrollView(
+            padding: const EdgeInsets.all(16),
+
+            child: Html(
+              data: privacyPolicy.data,
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
