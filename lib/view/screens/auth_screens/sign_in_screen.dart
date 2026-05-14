@@ -33,7 +33,7 @@ class SignInScreen extends StatelessWidget {
                 hintText: "Username or Email",
               ),
               SizedBox(height: 20.h),
-              CustomTextFormField(
+              Obx((){return CustomTextFormField(
                 controller: _controllerLogin.passwordController,
                 prefixIcon: Icon(
                   Icons.lock,
@@ -41,12 +41,17 @@ class SignInScreen extends StatelessWidget {
                   size: 24.r,
                 ),
                 hintText: "Password",
-                suffixIcon: Icon(
-                  Icons.visibility_outlined,
+                suffixIcon: IconButton(
+                  icon: Icon(_controllerLogin.showPass.value
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,size: 24.r,),
                   color: Color(0xFF8C8C90),
-                  size: 24.r,
+                  onPressed: (){
+                    _controllerLogin.showPassword();
+                  },
                 ),
-              ),
+                obscureText: _controllerLogin.showPass.value,
+              );}),
               SizedBox(height: 20.h),
               Align(
                 alignment: Alignment.center,

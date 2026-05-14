@@ -12,7 +12,6 @@ class SignUpController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController countryCodeController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
@@ -20,7 +19,8 @@ class SignUpController extends GetxController {
   final TextEditingController agreedWithTermsController =
       TextEditingController();
 
-  var isLoading = false.obs;
+  RxBool showPass = true.obs;
+  RxBool isLoading = false.obs;
   String baseUrl = "https://tullana.toldpath.com/api";
 
   @override
@@ -45,7 +45,9 @@ class SignUpController extends GetxController {
     agreedWithTermsController.dispose();
     super.onClose();
   }
-
+  void showPassword(){
+    showPass.value = !showPass.value;
+  }
   Future register() async {
     // Validation
     if (emailController.text.isEmpty ||
@@ -80,8 +82,6 @@ class SignUpController extends GetxController {
           'agreed_with_terms': "true",
         },
       );
-      print("STATUS CODE: ${response.statusCode}");
-      print("BODY: ${response.body}");
 
       var data = jsonDecode(response.body);
 
@@ -91,15 +91,12 @@ class SignUpController extends GetxController {
         Get.snackbar("Success", data['message'] ?? "Account created!");
         Get.offAllNamed("/homeScreen");
       } else {
-        print(Uri.parse("$baseUrl/customer/auth/register"));
         Get.snackbar(
           "Error",
           data['message'] ?? data['error'] ?? "Registration failed",
         );
       }
-    } catch (e, x) {
-      debugPrint("$e");
-      debugPrint("$x");
+    } catch (e) {
       Get.snackbar("Error", e.toString());
     } finally {
       isLoading.value = false;

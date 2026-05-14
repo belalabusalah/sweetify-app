@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/auth_controler/sign_in_controller.dart';
 import 'package:sweetify_app/controller/auth_controler/sign_up_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_app_custom.dart';
@@ -69,8 +68,8 @@ class SignUpScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.h),
 
-              CustomTextFormField(
-                obscureText: true,
+              Obx(()=>CustomTextFormField(
+                obscureText: _signUpController.showPass.value,
                 controller: _signUpController.passwordController,
                 prefixIcon: Icon(
                   Icons.lock,
@@ -78,12 +77,18 @@ class SignUpScreen extends StatelessWidget {
                   size: 24.r,
                 ),
                 hintText: "Password",
-                suffixIcon: Icon(
-                  Icons.visibility_outlined,
+                suffixIcon: IconButton(
+                  icon: Icon(_signUpController.showPass.value
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,size: 24.r,),
+                  onPressed: (){
+                    _signUpController.showPassword();
+                  },
                   color: const Color(0xFF8C8C90),
-                  size: 24.r,
+
                 ),
-              ),
+
+              ),),
               SizedBox(height: 20.h),
 
               CustomTextFormField(
@@ -97,7 +102,9 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 hintText: "Confirm Password",
                 suffixIcon: Icon(
-                  Icons.visibility_outlined,
+                    _signUpController.showPass.value
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
                   color: const Color(0xFF8C8C90),
                   size: 24.r,
                 ),

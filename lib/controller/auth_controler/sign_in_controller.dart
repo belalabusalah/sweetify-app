@@ -7,9 +7,10 @@ import 'package:sweetify_app/%20services/settings_services.dart';
 
 class SignInController extends GetxController {
   final SettingsServices settings = Get.find();
+  RxBool showPass = true.obs;
   TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  var isLoading = false.obs;
+  RxBool isLoading = false.obs;
   String baseUrl="https://tullana.toldpath.com/api";
 
   @override
@@ -26,6 +27,9 @@ class SignInController extends GetxController {
   void onClose(){
 
     super.onClose();
+  }
+  void showPassword(){
+    showPass.value = !showPass.value;
   }
   Future login() async {
     if (userNameController.text.isEmpty || passwordController.text.isEmpty) {
