@@ -41,9 +41,12 @@ class ProfileMoreSection extends StatelessWidget {
         ),
 
         // Terms & Conditions
-        const ProfileTile(
+         ProfileTile(
           icon: Icons.description,
           title: "Terms & Conditions",
+           onTap: (){
+            Get.toNamed("/termsConditionsScreen");
+           },
         ),
 
         SizedBox(height: 20.h),

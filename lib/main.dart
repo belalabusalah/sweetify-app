@@ -14,6 +14,7 @@ import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.da
 import 'package:sweetify_app/view/screens/home_screen.dart';
 import 'package:sweetify_app/view/screens/privacy_policy_screen.dart';
 import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
+import 'package:sweetify_app/view/screens/terms_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/profileScreen", page: () => ProfileScreen()),
             GetPage(name: "/aboutUsScreen", page: () => AboutUsScreen()),
             GetPage(name: "/privacyPolicyScreen", page: () => PrivacyPolicyScreen()),
+            GetPage(name: "/termsConditionsScreen", page: () => TermsConditionsScreen()),
           ],
         );
       },
