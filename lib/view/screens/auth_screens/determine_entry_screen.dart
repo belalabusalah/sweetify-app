@@ -33,7 +33,7 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
               text: 'Login',
               onPressed: () {
                 setState(() {
-                  Get.toNamed("/signIn");
+                  Get.toNamed("/signInScreen");
                 });
               },
               color: Color(0xFF483028),

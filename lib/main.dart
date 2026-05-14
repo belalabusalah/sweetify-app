@@ -11,6 +11,7 @@ import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.dart';
 import 'package:sweetify_app/view/screens/home_screen.dart';
+import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,9 +43,10 @@ class MyApp extends StatelessWidget {
           getPages: [
             GetPage(name: "/splashScreen", page: () => SplashScreen()),
             GetPage(name: "/determineEntryScreen",page: () => DetermineEntryScreen(),),
-            GetPage(name: "/signIn", page: () => SignInScreen()),
+            GetPage(name: "/signInScreen", page: () => SignInScreen()),
             GetPage(name: "/signUpScreen", page: () => SignUpScreen()),
             GetPage(name: "/homeScreen", page: () => HomeScreen()),
+            GetPage(name: "/profileScreen", page: () => ProfileScreen()),
           ],
         );
       },
