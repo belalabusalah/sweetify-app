@@ -6,6 +6,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/instance_manager.dart';
 import 'package:sweetify_app/%20services/settings_services.dart';
 import 'package:sweetify_app/utils/mu_bindings.dart';
+import 'package:sweetify_app/view/screens/about_us_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/signUpScreen", page: () => SignUpScreen()),
             GetPage(name: "/homeScreen", page: () => HomeScreen()),
             GetPage(name: "/profileScreen", page: () => ProfileScreen()),
+            GetPage(name: "/aboutUsScreen", page: () => AboutUsScreen()),
           ],
         );
       },

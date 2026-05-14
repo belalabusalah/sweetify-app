@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
 
 class ProfileMoreSection extends StatelessWidget {
@@ -22,9 +23,12 @@ class ProfileMoreSection extends StatelessWidget {
         SizedBox(height: 10.h),
 
         // About Us
-        const ProfileTile(
+         ProfileTile(
           icon: Icons.info,
           title: "About Us",
+          onTap: (){
+            Get.toNamed("/aboutUsScreen");
+          },
         ),
 
         // Privacy Policy
