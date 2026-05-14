@@ -3,8 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:sweetify_app/%20services/settings_services.dart';
 
 class SignInController extends GetxController {
+  final SettingsServices settings = Get.find();
   TextEditingController userNameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   var isLoading = false.obs;
@@ -45,14 +47,20 @@ class SignInController extends GetxController {
         },
       );
 
-      var decodedJson = jsonDecode(response.body);
+      var data = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
-        Get.snackbar("Success", decodedJson['message'] ?? "Logged in");
+        String token = data['token'];
+        await settings.saveToken(token);
+        Get.snackbar(
+          "Success",
+          data['message'] ?? "Logged in successfully",
+        );
+        Get.offAllNamed("/homeScreen");
       } else {
         Get.snackbar(
           "Error",
-          decodedJson['message'] ?? decodedJson['error'] ?? "Login failed",
+          data['message'] ?? data['error'] ?? "Login failed",
         );
       }
     } catch (e) {

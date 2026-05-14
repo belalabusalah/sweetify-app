@@ -7,9 +7,10 @@ import 'package:get/instance_manager.dart';
 import 'package:sweetify_app/%20services/settings_services.dart';
 import 'package:sweetify_app/utils/mu_bindings.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
-import 'package:sweetify_app/view/screens/auth_screens/sign_up.dart';
+import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
-import 'package:sweetify_app/view/screens/determine_entry_screen.dart';
+import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.dart';
+import 'package:sweetify_app/view/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,12 +41,10 @@ class MyApp extends StatelessWidget {
           initialBinding: MuBindings(),
           getPages: [
             GetPage(name: "/splashScreen", page: () => SplashScreen()),
-            GetPage(
-              name: "/determineEntryScreen",
-              page: () => DetermineEntryScreen(),
-            ),
+            GetPage(name: "/determineEntryScreen",page: () => DetermineEntryScreen(),),
             GetPage(name: "/signIn", page: () => SignInScreen()),
             GetPage(name: "/signUpScreen", page: () => SignUpScreen()),
+            GetPage(name: "/homeScreen", page: () => HomeScreen()),
           ],
         );
       },

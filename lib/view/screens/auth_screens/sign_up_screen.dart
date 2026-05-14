@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sweetify_app/controller/auth_controler/sign_in_controller.dart';
+import 'package:sweetify_app/controller/auth_controler/sign_up_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_form_faild_app_custom.dart';
@@ -9,7 +10,7 @@ import 'package:sweetify_app/view/widgets/text_form_faild_app_custom.dart';
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
 
-  final SignInController _controller = Get.find();
+  final SignUpController _signUpController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,29 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 40.h),
 
               CustomTextFormField(
-                controller: _controller.userNameController,
+                controller: _signUpController.firstNameController,
+                prefixIcon: Icon(
+                  Icons.drive_file_rename_outline,
+                  color: const Color(0xFF8C8C90),
+                  size: 24.r,
+                ),
+                hintText: "first name",
+              ),
+              SizedBox(height: 20.h),
+
+              CustomTextFormField(
+                controller: _signUpController.lastNameController,
+                prefixIcon: Icon(
+                  Icons.drive_file_rename_outline,
+                  color: const Color(0xFF8C8C90),
+                  size: 24.r,
+                ),
+                hintText: "last name",
+              ),
+              SizedBox(height: 20.h),
+
+              CustomTextFormField(
+                controller: _signUpController.emailController,
                 prefixIcon: Icon(
                   Icons.person,
                   color: const Color(0xFF8C8C90),
@@ -36,8 +59,19 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 20.h),
 
               CustomTextFormField(
+                controller: _signUpController.phoneController,
+                prefixIcon: Icon(
+                  Icons.phone,
+                  color: const Color(0xFF8C8C90),
+                  size: 24.r,
+                ),
+                hintText: "phone",
+              ),
+              SizedBox(height: 20.h),
+
+              CustomTextFormField(
                 obscureText: true,
-                controller: _controller.passwordController,
+                controller: _signUpController.passwordController,
                 prefixIcon: Icon(
                   Icons.lock,
                   color: const Color(0xFF8C8C90),
@@ -54,7 +88,7 @@ class SignUpScreen extends StatelessWidget {
 
               CustomTextFormField(
                 obscureText: true,
-                controller: TextEditingController(), // الأفضل تعمل Controller منفصل لاحقاً
+                controller: _signUpController.confirmPasswordController,
                 prefixIcon: Icon(
                   Icons.lock,
                   color: const Color(0xFF8C8C90),
@@ -97,12 +131,12 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 30.h),
 
               Obx(() {
-                return _controller.isLoading.value
+                return _signUpController.isLoading.value
                     ? const CircularProgressIndicator()
                     : CustomElevatedButton(
                   text: 'Create Account',
                   onPressed: () {
-                    _controller.login(); // لاحقاً تعمل register method
+                    _signUpController.register();
                   },
                   color: const Color(0xFF483028),
                 );
