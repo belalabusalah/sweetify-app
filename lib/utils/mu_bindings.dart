@@ -4,7 +4,6 @@ import 'package:get/get_instance/get_instance.dart';
 import 'package:sweetify_app/%20services/settings_services.dart';
 import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
 import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart';
-import 'package:sweetify_app/localization/local_controller.dart';
 
 class MuBindings implements Bindings{
 
@@ -15,8 +14,6 @@ class MuBindings implements Bindings{
        Get.putAsync<SettingsServices>(() async {
         return await SettingsServices().initSharedPreferences();
       });
-
-    Get.put(MyLocalController(),permanent: true);
 
     // Get.put(SignInController(),permanent: true);
     Get.lazyPut(()=>SignInController(),fenix: true);
