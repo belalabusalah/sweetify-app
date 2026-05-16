@@ -1,18 +1,30 @@
 
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
-import 'package:http/http.dart';
-import 'package:sweetify_app/controller/auth_controler/sign_in_controller.dart';
-import 'package:sweetify_app/controller/auth_controler/sign_up_controller.dart';
+import 'package:sweetify_app/%20services/settings_services.dart';
+import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
+import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart';
+import 'package:sweetify_app/localization/local_controller.dart';
 
 class MuBindings implements Bindings{
-  @override
-  void dependencies() {
-    Get.put(SignInController(),permanent: true);
-    // Get.lazyPut(()=>SignInController(),fenix: true);
 
-    Get.put(SignUpController(),permanent: true);
-    // Get.lazyPut(()=>SignUpController(),fenix: true);
+
+    @override
+    void dependencies() {
+
+       Get.putAsync<SettingsServices>(() async {
+        return await SettingsServices().initSharedPreferences();
+      });
+
+    Get.put(MyLocalController(),permanent: true);
+
+    // Get.put(SignInController(),permanent: true);
+    Get.lazyPut(()=>SignInController(),fenix: true);
+
+    // Get.put(SignUpController(),permanent: true);
+    Get.lazyPut(()=>SignUpController(),fenix: true);
+
+
 
   }
 }

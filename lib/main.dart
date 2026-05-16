@@ -5,6 +5,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/instance_manager.dart';
 import 'package:sweetify_app/%20services/settings_services.dart';
+import 'package:sweetify_app/localization/local.dart';
+import 'package:sweetify_app/localization/local_controller.dart';
 import 'package:sweetify_app/utils/mu_bindings.dart';
 import 'package:sweetify_app/view/screens/about_us_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
@@ -19,7 +21,7 @@ import 'package:sweetify_app/view/screens/terms_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initalServices();
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 Future initalServices() async {
@@ -27,7 +29,8 @@ Future initalServices() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final localController = Get.find<MyLocalController>();
+   MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -39,8 +42,9 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-          ),
+            colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+          locale:localController.locale.value ,
+          translations:MyLocal() ,
           initialRoute: "/splashScreen",
           initialBinding: MuBindings(),
           getPages: [

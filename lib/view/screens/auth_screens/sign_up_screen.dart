@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/auth_controler/sign_up_controller.dart';
+import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_form_faild_app_custom.dart';
