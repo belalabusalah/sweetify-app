@@ -49,6 +49,14 @@ class ProfileMoreSection extends StatelessWidget {
           },
         ),
 
+        ProfileTile(
+          icon: Icons.support_agent,
+          title: "support".tr,
+          onTap: (){
+            Get.toNamed("/supportScreen");
+          },
+        ),
+
         SizedBox(height: 20.h),
       ],
     );

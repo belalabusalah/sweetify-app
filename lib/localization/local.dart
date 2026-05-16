@@ -63,6 +63,17 @@ class MyLocal implements Translations {
       // =============== common ===============
       "common.no_data": "لا توجد بيانات",
       "common.no_data_found": "لم يتم العثور على بيانات",
+
+      // =============== support ===============
+      "support": "الدعم الفني",
+      "support.title": "الدعم",
+      "support.headline": "نحن هنا للمساعدة 👋",
+      "support.subtitle": "أرسل مشكلتك وسنرد عليك قريبًا.",
+      "support.subject_hint": "الموضوع",
+      "support.message_hint": "اكتب رسالتك...",
+      "support.send_ticket": "إرسال التذكرة",
+      "support.sending": "جاري الإرسال...",
+
     },
     "en": {
       // =============== splash ===============
@@ -124,6 +135,17 @@ class MyLocal implements Translations {
       // =============== common ===============
       "common.no_data": "No Data",
       "common.no_data_found": "No Data Found",
+
+      // =============== support ===============
+      "support": "Technical support",
+      "support.title": "Support",
+      "support.headline": "We're here to help 👋",
+      "support.subtitle": "Send your issue and we will respond soon.",
+      "support.subject_hint": "Subject",
+      "support.message_hint": "Write your message...",
+      "support.send_ticket": "Send Ticket",
+      "support.sending": "Sending...",
+
     },
   };
 }

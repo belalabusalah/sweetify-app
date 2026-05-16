@@ -5,6 +5,8 @@ import 'package:sweetify_app/%20services/settings_services.dart';
 import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
 import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart';
 
+import '../controller/screens_controller/support_controller.dart';
+
 class MuBindings implements Bindings{
 
 
@@ -20,6 +22,8 @@ class MuBindings implements Bindings{
 
     // Get.put(SignUpController(),permanent: true);
     Get.lazyPut(()=>SignUpController(),fenix: true);
+
+    Get.put(SupportController());
 
 
 
