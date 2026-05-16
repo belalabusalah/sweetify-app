@@ -7,14 +7,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("home screen")),
+      appBar: AppBar(title: Text("home.title".tr)),
       body: Center(
         child: Container(
           child: ElevatedButton(
             onPressed: () {
               Get.toNamed("/profileScreen");
             },
-            child: Text("go to profile"),
+            child: Text("login".tr),
           ),
         ),
       ),

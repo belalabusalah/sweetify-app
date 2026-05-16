@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:sweetify_app/%20services/about_us_services.dart';
 
 class AboutUsScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("About Us")),
+      appBar: AppBar(title: Text("more.about_us".tr)),
       body: FutureBuilder(
         future: future,
         builder: (context, snapshot) {

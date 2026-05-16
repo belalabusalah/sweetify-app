@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sweetify_app/localization/local_controller.dart';
@@ -19,7 +20,7 @@ class ProfileSettingsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
-            "Settings",
+            "profile.settings".tr,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
@@ -27,17 +28,17 @@ class ProfileSettingsSection extends StatelessWidget {
         SizedBox(height: 10.h),
 
         // Theme
-        const ProfileTile(
+        ProfileTile(
           icon: Icons.dark_mode,
-          title: "Theme",
-          subtitle: "Change app theme",
+          title: "profile.theme".tr,
+          subtitle: "profile.change_theme".tr,
         ),
 
         // Language
-         ProfileTile(
+        ProfileTile(
           icon: Icons.language,
-          title: "Language",
-          subtitle: "English / Arabic",
+          title: "profile.language".tr,
+          subtitle: "profile.lang_options".tr,
           onTap: (){
             _localController.toggleLang();
           },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
 
 class UserInfoSection extends StatelessWidget {
@@ -13,29 +14,29 @@ class UserInfoSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
-            "User Info",
+            "profile.user_info".tr,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
 
         SizedBox(height: 10.h),
 
-        const ProfileTile(
+        ProfileTile(
           icon: Icons.phone,
-          title: "Phone",
+          title: "profile.phone".tr,
           subtitle: "0592026892",
         ),
 
-        const ProfileTile(
+        ProfileTile(
           icon: Icons.person,
-          title: "Username",
+          title: "profile.username".tr,
           subtitle: "belal_5678_agh",
         ),
 
-        const ProfileTile(
+        ProfileTile(
           icon: Icons.wc,
-          title: "Gender",
-          subtitle: "Not set",
+          title: "profile.gender".tr,
+          subtitle: "profile.not_set".tr,
         ),
 
         SizedBox(height: 20.h),

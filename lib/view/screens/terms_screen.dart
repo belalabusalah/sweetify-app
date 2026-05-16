@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:get/get.dart';
 import 'package:sweetify_app/%20services/terms_conditions_services.dart';
 import 'package:sweetify_app/model/terms_conditions_model.dart';
 
@@ -26,7 +27,7 @@ class _TermsConditionsScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Terms & Conditions"),
+        title: Text("more.terms".tr),
       ),
 
       body: FutureBuilder<TermsConditionsModel>(
@@ -46,8 +47,8 @@ class _TermsConditionsScreenState
           }
 
           if (!snapshot.hasData) {
-            return const Center(
-              child: Text("No Data Found"),
+            return Center(
+              child: Text("common.no_data_found".tr),
             );
           }
 

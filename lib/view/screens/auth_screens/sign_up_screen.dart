@@ -21,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
             children: [
               SizedBox(height: 27.h),
 
-              AppText.body("Create an Account",fontSize: 24.sp,fontWeight: FontWeight.w600,),
+              AppText.body("auth.create_account_title".tr,fontSize: 24.sp,fontWeight: FontWeight.w600,),
               SizedBox(height: 40.h),
 
               CustomTextFormField(
@@ -31,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
                   color: const Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "first name",
+                hintText: "auth.first_name".tr,
               ),
               SizedBox(height: 20.h),
 
@@ -42,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                   color: const Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "last name",
+                hintText: "auth.last_name".tr,
               ),
               SizedBox(height: 20.h),
 
@@ -53,7 +53,7 @@ class SignUpScreen extends StatelessWidget {
                   color: const Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "Username or Email",
+                hintText: "auth.username_or_email".tr,
               ),
               SizedBox(height: 20.h),
 
@@ -64,7 +64,7 @@ class SignUpScreen extends StatelessWidget {
                   color: const Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "phone",
+                hintText: "auth.phone".tr,
               ),
               SizedBox(height: 20.h),
 
@@ -76,7 +76,7 @@ class SignUpScreen extends StatelessWidget {
                   color: const Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "Password",
+                hintText: "auth.password".tr,
                 suffixIcon: IconButton(
                   icon: Icon(_signUpController.showPass.value
                       ? Icons.visibility_off_outlined
@@ -100,7 +100,7 @@ class SignUpScreen extends StatelessWidget {
                   size: 24.r,
 
                 ),
-                hintText: "Confirm Password",
+                hintText: "auth.confirm_password".tr,
                 suffixIcon: Icon(
                     _signUpController.showPass.value
                         ? Icons.visibility_off_outlined
@@ -114,22 +114,22 @@ class SignUpScreen extends StatelessWidget {
               Wrap(
                 children: [
                   AppText.caption(
-                    "By clicking the  ",
+                    "auth.by_clicking".tr,
                     color: const Color(0xFFA99577),
                     textAlign: TextAlign.center,
                   ),
                   AppText.caption(
-                    "Create Account",
+                    "auth.create_account".tr,
                     color: const Color(0xFFC99206),
                     textAlign: TextAlign.center,
                   ),
                   AppText.caption(
-                    "button, you agree ",
+                    "auth.button_you_agree".tr,
                     color: const Color(0xFFA99577),
                     textAlign: TextAlign.center,
                   ),
                   AppText.caption(
-                    " to the public offer",
+                    "auth.to_public_offer".tr,
                     color: const Color(0xFFA99577),
                     textAlign: TextAlign.center,
                   ),
@@ -141,7 +141,7 @@ class SignUpScreen extends StatelessWidget {
                 return _signUpController.isLoading.value
                     ? const CircularProgressIndicator()
                     : CustomElevatedButton(
-                  text: 'Create Account',
+                  text: "auth.create_account".tr,
                   onPressed: () {
                     _signUpController.register();
                   },
@@ -155,8 +155,8 @@ class SignUpScreen extends StatelessWidget {
                   const Expanded(child: Divider(thickness: 1)),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: const Text(
-                      "Or Continue With",
+                    child: Text(
+                      "auth.or_continue_with".tr,
                       style: TextStyle(fontSize: 12, color: Color(0xFFA99577)),
                     ),
                   ),
@@ -182,14 +182,14 @@ class SignUpScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AppText.caption(
-                    "I Already Have an Account",
+                    "auth.already_have_account".tr,
                     color: const Color(0xFFA99577),
                   ),
                   TextButton(
                     onPressed: () {
                       Get.back();
                     },
-                    child: AppText.caption("Sign In"),
+                    child: AppText.caption("auth.sign_in".tr),
                   ),
                 ],
               ),

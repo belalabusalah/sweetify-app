@@ -27,16 +27,16 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               AppText.title(
-                "Snuggle Into Comfort",
+                "splash.title".tr,
                 maxLines: 2,
                 color: Colors.white,
                 textAlign: TextAlign.center,
                 fontSize: 40.sp,
               ),
-              AppText.body("Discover Cozy Elegance. Shop Now!",color: Colors.white,),
+              AppText.body("splash.subtitle".tr, color: Colors.white,),
               SizedBox(height: 12.h,),
               CustomElevatedButton(
-                text: 'Get Comfy',
+                text: "splash.get_comfy".tr,
                 width: 200,
                 radius: 100,
                 icon: Icons.arrow_forward,

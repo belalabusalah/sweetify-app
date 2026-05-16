@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:get/get.dart';
 import 'package:sweetify_app/%20services/privacy_policy_services.dart';
 import 'package:sweetify_app/model/privacy_policy_model.dart';
 
@@ -30,7 +31,7 @@ class _PrivacyPolicyScreenState
     return Scaffold(
 
       appBar: AppBar(
-        title: const Text("Privacy Policy"),
+        title: Text("more.privacy_policy".tr),
       ),
 
       body: FutureBuilder<PrivacyPolicyModel>(
@@ -58,8 +59,8 @@ class _PrivacyPolicyScreenState
 
           if (!snapshot.hasData) {
 
-            return const Center(
-              child: Text("No Data"),
+            return Center(
+              child: Text("common.no_data".tr),
             );
           }
 

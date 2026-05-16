@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class AddressSection extends StatelessWidget {
   const AddressSection({super.key});
@@ -13,7 +14,7 @@ class AddressSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
-            "Address",
+            "profile.address".tr,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
@@ -32,7 +33,7 @@ class AddressSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Shipping address",
+                "profile.shipping_address".tr,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 6.h),
@@ -52,7 +53,7 @@ class AddressSection extends StatelessWidget {
             onPressed: () {
               // TODO: Navigate to addresses screen
             },
-            child: const Text("Manage Addresses"),
+            child: Text("profile.manage_addresses".tr),
           ),
         ),
 

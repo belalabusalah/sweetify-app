@@ -25,12 +25,12 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
               width: 300.w,
               child: AppText.body(
                 fontSize: 12,
-                "You must be 18 or above to place an order, for customers aged 13-17 please    ask a parent or guardian for consent.",
+                "auth.age_notice".tr,
               ),
             ),
             SizedBox(height: 20.h),
             CustomElevatedButton(
-              text: 'Login',
+              text: "auth.login".tr,
               onPressed: () {
                 setState(() {
                   Get.toNamed("/signInScreen");
@@ -40,7 +40,7 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
             ),
             SizedBox(height: 20.h),
             CustomElevatedButton(
-              text: 'Create Account',
+              text: "auth.create_account".tr,
               onPressed: () {
                 setState(() {
                   Get.toNamed("/signUpScreen");
@@ -50,7 +50,7 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
             ),
             SizedBox(height: 22.5.h),
             AppText.caption(
-              "Skip for Now",
+              "auth.skip".tr,
               fontSize: 12,
               color: Color(0xFFA99577),
             ),
@@ -65,7 +65,7 @@ class _DetermineEntryScreenState extends State<DetermineEntryScreen> {
                   image: AssetImage("images/auth_images/sel_auth.png"),
                 ),
                 AppText(
-                  "Autumn Chick",
+                  "auth.brand_name".tr,
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                 ),

@@ -21,7 +21,7 @@ class ProfileAccountSection extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
             ),
-            child: Text("Logout"),
+            child: Text("profile.logout".tr),
           ),
         ),
 
@@ -34,7 +34,7 @@ class ProfileAccountSection extends StatelessWidget {
               // TODO: Delete Account Logic
             },
             child: Text(
-              "Delete Account",
+              "profile.delete_account".tr,
               style: TextStyle(
                 color: Colors.red,
               ),

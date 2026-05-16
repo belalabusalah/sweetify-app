@@ -15,7 +15,7 @@ class ProfileMoreSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
-            "More",
+            "profile.more".tr,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ),
@@ -23,30 +23,30 @@ class ProfileMoreSection extends StatelessWidget {
         SizedBox(height: 10.h),
 
         // About Us
-         ProfileTile(
+        ProfileTile(
           icon: Icons.info,
-          title: "About Us",
+          title: "more.about_us".tr,
           onTap: (){
             Get.toNamed("/aboutUsScreen");
           },
         ),
 
         // Privacy Policy
-         ProfileTile(
+        ProfileTile(
           icon: Icons.privacy_tip,
-          title: "Privacy Policy",
-           onTap: (){
+          title: "more.privacy_policy".tr,
+          onTap: (){
             Get.toNamed("/privacyPolicyScreen");
-           },
+          },
         ),
 
         // Terms & Conditions
-         ProfileTile(
+        ProfileTile(
           icon: Icons.description,
-          title: "Terms & Conditions",
-           onTap: (){
+          title: "more.terms".tr,
+          onTap: (){
             Get.toNamed("/termsConditionsScreen");
-           },
+          },
         ),
 
         SizedBox(height: 20.h),
