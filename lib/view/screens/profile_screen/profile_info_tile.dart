@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
 import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
 
 class UserInfoSection extends StatelessWidget {
-  const UserInfoSection({super.key});
-
+   UserInfoSection({super.key});
+  final ProfileController _profileController = Get.find();
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Obx((){
+      final user = _profileController.profile.value;
+      return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
@@ -24,23 +27,23 @@ class UserInfoSection extends StatelessWidget {
         ProfileTile(
           icon: Icons.phone,
           title: "profile.phone".tr,
-          subtitle: "0592026892",
+          subtitle: user!.phone,
         ),
 
         ProfileTile(
           icon: Icons.person,
           title: "profile.username".tr,
-          subtitle: "belal_5678_agh",
+          subtitle: user.username,
         ),
 
         ProfileTile(
           icon: Icons.wc,
           title: "profile.gender".tr,
-          subtitle: "profile.not_set".tr,
+          subtitle: user.gender,
         ),
 
         SizedBox(height: 20.h),
       ],
-    );
+    );});
   }
 }

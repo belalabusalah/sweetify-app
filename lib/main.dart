@@ -28,6 +28,7 @@ void main() async {
 Future initalServices() async {
   await Get.putAsync(() => SettingsServices().initSharedPreferences());
   Get.put(MyLocalController(), permanent: true);
+
 }
 
 class MyApp extends StatelessWidget {

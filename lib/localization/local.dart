@@ -54,6 +54,7 @@ class MyLocal implements Translations {
       "profile.more": "المزيد",
       "profile.logout": "تسجيل الخروج",
       "profile.delete_account": "حذف الحساب",
+      "profile.no_data": "لا توجد بيانات للملف الشخصي",
 
       // =============== more ===============
       "more.about_us": "من نحن",
@@ -126,6 +127,7 @@ class MyLocal implements Translations {
       "profile.more": "More",
       "profile.logout": "Logout",
       "profile.delete_account": "Delete Account",
+      "profile.no_data": "No profile data",
 
       // =============== more ===============
       "more.about_us": "About Us",
