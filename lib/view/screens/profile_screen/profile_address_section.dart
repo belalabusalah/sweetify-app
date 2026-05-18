@@ -51,7 +51,7 @@ class AddressSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: TextButton(
             onPressed: () {
-              // TODO: Navigate to addresses screen
+              Get.toNamed("/addressScreen");
             },
             child: Text("profile.manage_addresses".tr),
           ),

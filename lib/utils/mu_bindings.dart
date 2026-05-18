@@ -6,6 +6,9 @@ import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart'
 import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/support_controller.dart';
 
+import '../ services/address_services.dart';
+import '../controller/screens_controller/address_controller.dart';
+
 class MuBindings implements Bindings {
   @override
   void dependencies() {
@@ -21,6 +24,17 @@ class MuBindings implements Bindings {
 
     Get.lazyPut(() => ProfileController(), fenix: true);
 
+    // Services
+    Get.lazyPut(() => GetAddressListService());
+
+
+
+    //controller
     Get.put(SupportController());
+    Get.put(AddressController());
+
+
+    // Services
+    Get.lazyPut(() => GetAddressListService());
   }
 }
