@@ -75,6 +75,40 @@ class MyLocal implements Translations {
       "support.send_ticket": "إرسال التذكرة",
       "support.sending": "جاري الإرسال...",
 
+      // =============== address — screen ===============
+      "address.title": "العناوين",
+      "address.add": "إضافة عنوان",
+      "address.empty": "لا توجد عناوين بعد",
+      "address.empty_hint": "أضف عنوانك الأول لتسريع عملية الطلب",
+
+      // =============== address — form ===============
+      "address.add_new": "إضافة عنوان جديد",
+      "address.edit_title": "تعديل العنوان",
+      "address.save": "حفظ",
+      "address.saving": "جاري الحفظ...",
+
+      // =============== address — form field hints ===============
+      "address.title_hint": "التسمية (مثال: المنزل، العمل)",
+      "address.recipient": "اسم المستلم",
+      "address.mobile": "رقم الجوال",
+      "address.street": "الشارع",
+      "address.block": "القطعة",
+      "address.avenue": "الجادة",
+      "address.building_name": "اسم المبنى",
+      "address.building_number": "رقم المبنى",
+      "address.area": "المنطقة",
+      "address.city": "المدينة",
+      "address.country_code": "رمز الدولة",
+      "address.postal_code": "الرمز البريدي",
+      "address.landmark": "أقرب معلم",
+      "address.instructions": "تعليمات خاصة",
+
+      // =============== address — messages ===============
+      "address.required": "هذا الحقل مطلوب",
+      "address.success_add": "تمت إضافة العنوان بنجاح",
+      "address.success_update": "تم تحديث العنوان بنجاح",
+      "address.error": "حدث خطأ، يرجى المحاولة مرة أخرى",
+
     },
     "en": {
       // =============== splash ===============
@@ -147,6 +181,40 @@ class MyLocal implements Translations {
       "support.message_hint": "Write your message...",
       "support.send_ticket": "Send Ticket",
       "support.sending": "Sending...",
+
+      // =============== address — screen ===============
+      "address.title": "Addresses",
+      "address.add": "Add Address",
+      "address.empty": "No addresses yet",
+      "address.empty_hint": "Add your first address to speed up checkout",
+
+      // =============== address — form ===============
+      "address.add_new": "Add New Address",
+      "address.edit_title": "Edit Address",
+      "address.save": "Save",
+      "address.saving": "Saving...",
+
+      // =============== address — form field hints ===============
+      "address.title_hint": "Label (e.g. Home, Work)",
+      "address.recipient": "Recipient Name",
+      "address.mobile": "Mobile",
+      "address.street": "Street",
+      "address.block": "Block",
+      "address.avenue": "Avenue",
+      "address.building_name": "Building Name",
+      "address.building_number": "Building Number",
+      "address.area": "Area",
+      "address.city": "City",
+      "address.country_code": "Country Code",
+      "address.postal_code": "Postal Code",
+      "address.landmark": "Nearest Landmark",
+      "address.instructions": "Special Instructions",
+
+      // =============== address — messages ===============
+      "address.required": "This field is required",
+      "address.success_add": "Address added successfully",
+      "address.success_update": "Address updated successfully",
+      "address.error": "Something went wrong, please try again",
 
     },
   };

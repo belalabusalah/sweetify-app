@@ -10,6 +10,7 @@ import 'package:sweetify_app/localization/local_controller.dart';
 import 'package:sweetify_app/utils/mu_bindings.dart';
 import 'package:sweetify_app/view/screens/about_us_screen.dart';
 import 'package:sweetify_app/view/screens/address_screen.dart';
+import 'package:sweetify_app/view/screens/address_form_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
@@ -62,7 +63,8 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/privacyPolicyScreen", page: () => PrivacyPolicyScreen()),
             GetPage(name: "/termsConditionsScreen", page: () => TermsConditionsScreen()),
             GetPage(name: "/supportScreen", page: () => SupportScreen()),
-            GetPage(name: "/addressScreen", page: () => AddressScreen()),
+            GetPage(name: "/addressScreen", page: () => const AddressScreen()),
+            GetPage(name: "/addressFormScreen", page: () => const AddressFormScreen()),
           ],
         );
       },
