@@ -26,7 +26,7 @@ class AddressScreen extends StatelessWidget {
         }
 
         if (controller.addresses.isEmpty) {
-          return _buildEmptyState();
+          return _buildEmptyState(controller);
         }
 
         return Column(
@@ -39,21 +39,19 @@ class AddressScreen extends StatelessWidget {
                 separatorBuilder: (_, __) => SizedBox(height: 12.h),
                 itemBuilder: (_, index) => _AddressCard(
                   address: controller.addresses[index],
-                  onTap: () => Get.toNamed(
-                    '/addressFormScreen',
-                    arguments: controller.addresses[index],
-                  ),
+                  onTap: () =>
+                      controller.navigateToEditAddress(controller.addresses[index]),
                 ),
               ),
             ),
-            _buildAddButton(),
+            _buildAddButton(controller),
           ],
         );
       }),
     );
   }
 
-  Widget _buildEmptyState() {
+  Widget _buildEmptyState(AddressController controller) {
     return Column(
       children: [
         Expanded(
@@ -82,18 +80,18 @@ class AddressScreen extends StatelessWidget {
             ),
           ),
         ),
-        _buildAddButton(),
+        _buildAddButton(controller),
       ],
     );
   }
 
-  Widget _buildAddButton() {
+  Widget _buildAddButton(AddressController controller) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: CustomElevatedButton(
         text: "address.add".tr,
         icon: Icons.add,
-        onPressed: () => Get.toNamed('/addressFormScreen'),
+        onPressed: controller.navigateToAddAddress,
       ),
     );
   }
