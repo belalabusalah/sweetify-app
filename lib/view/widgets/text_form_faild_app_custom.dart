@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     this.obscureText = false,
     this.keyboardType,
+    this.maxLines=1,
     this.validator,
     this.onChanged,
   });
@@ -19,6 +20,7 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextEditingController? controller;
   final bool obscureText;
+  final int maxLines;
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final Function(String)? onChanged;
@@ -31,11 +33,13 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       validator: validator,
       onChanged: onChanged,
+      maxLines:maxLines,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(
           fontSize: 12.sp,
           fontWeight: FontWeight.w400,
+          // overflow: Text,
           color: Color(0xFF676767),
         ),
 
@@ -56,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
 
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(30),
           borderSide: BorderSide(color: Color(0xFF8C8C90), width: 1.5),
         ),
 
@@ -66,12 +70,12 @@ class CustomTextFormField extends StatelessWidget {
         ),
 
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(30),
           borderSide: const BorderSide(color: Colors.red, width: 1.5),
         ),
 
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(30),
           borderSide: const BorderSide(color: Colors.red, width: 1.5),
         ),
       ),

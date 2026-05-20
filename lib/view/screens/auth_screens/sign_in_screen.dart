@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:sweetify_app/controller/auth_controler/sign_in_controller.dart';
+import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_app_custom.dart';
 import 'package:sweetify_app/view/widgets/text_form_faild_app_custom.dart';
@@ -30,7 +30,7 @@ class SignInScreen extends StatelessWidget {
                   color: Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "Username or Email",
+                hintText: "auth.username_or_email".tr,
               ),
               SizedBox(height: 20.h),
               Obx((){return CustomTextFormField(
@@ -40,7 +40,7 @@ class SignInScreen extends StatelessWidget {
                   color: Color(0xFF8C8C90),
                   size: 24.r,
                 ),
-                hintText: "Password",
+                hintText: "auth.password".tr,
                 suffixIcon: IconButton(
                   icon: Icon(_controllerLogin.showPass.value
                       ? Icons.visibility_off_outlined
@@ -58,7 +58,7 @@ class SignInScreen extends StatelessWidget {
                 child: TextButton(
                   onPressed: () {},
                   child: AppText.body(
-                    "Forgot Password?",
+                    "auth.forgot_password".tr,
                     color: Color(0xFFA99577),
                   ),
                 ),
@@ -68,7 +68,7 @@ class SignInScreen extends StatelessWidget {
                 return _controllerLogin.isLoading.value
                     ? CircularProgressIndicator()
                     : CustomElevatedButton(
-                        text: 'Login',
+                        text: "auth.login".tr,
                         onPressed: () {
                           _controllerLogin.login();
                         },
@@ -83,7 +83,7 @@ class SignInScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 3),
                     child: Text(
-                      "Or Continue With ",
+                      "auth.or_continue_with".tr,
                       style: TextStyle(fontSize: 12, color: Color(0xFFA99577)),
                     ),
                   ),
@@ -121,12 +121,12 @@ class SignInScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AppText.caption(
-                    "Create An Account",
+                    "auth.create_an_account".tr,
                     color: Color(0xFFA99577),
                   ),
                   TextButton(
                     onPressed: () {Get.toNamed("/signUpScreen");},
-                    child: AppText.caption("Sign Up"),
+                    child: AppText.caption("auth.sign_up".tr),
                   ),
                 ],
               ),
