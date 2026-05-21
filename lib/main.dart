@@ -15,27 +15,30 @@ import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.dart';
+import 'package:sweetify_app/view/screens/card_screen.dart';
+import 'package:sweetify_app/view/screens/detils_screen.dart';
 import 'package:sweetify_app/view/screens/home_screen.dart';
+import 'package:sweetify_app/view/screens/payment_card.dart';
 import 'package:sweetify_app/view/screens/privacy_policy_screen.dart';
 import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
 import 'package:sweetify_app/view/screens/support_screen.dart';
 import 'package:sweetify_app/view/screens/terms_screen.dart';
+import 'package:sweetify_app/view/screens/wish_list_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initalServices();
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 Future initalServices() async {
   await Get.putAsync(() => SettingsServices().initSharedPreferences());
   Get.put(MyLocalController(), permanent: true);
-
 }
 
 class MyApp extends StatelessWidget {
   final localController = Get.find<MyLocalController>();
-   MyApp({super.key});
+  MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -47,9 +50,10 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-          locale:localController.locale.value ,
-          translations:MyLocal() ,
+            colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+          ),
+          locale: localController.locale.value,
+          translations: MyLocal(),
           initialRoute: "/splashScreen",
           initialBinding: MuBindings(),
           getPages: [
@@ -60,11 +64,15 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/homeScreen", page: () => HomeScreen()),
             GetPage(name: "/profileScreen", page: () => ProfileScreen()),
             GetPage(name: "/aboutUsScreen", page: () => AboutUsScreen()),
-            GetPage(name: "/privacyPolicyScreen", page: () => PrivacyPolicyScreen()),
-            GetPage(name: "/termsConditionsScreen", page: () => TermsConditionsScreen()),
+            GetPage(name: "/privacyPolicyScreen",page: () => PrivacyPolicyScreen(),),
+            GetPage(name: "/termsConditionsScreen",page: () => TermsConditionsScreen(),),
             GetPage(name: "/supportScreen", page: () => SupportScreen()),
             GetPage(name: "/addressScreen", page: () => const AddressScreen()),
-            GetPage(name: "/addressFormScreen", page: () => const AddressFormScreen()),
+            GetPage(name: "/addressFormScreen",page: () => const AddressFormScreen(),),
+            GetPage(name: "/wishListScreen", page: () => WishListScreen()),
+            GetPage(name: "/paymentScreen", page: () => PaymentScreen()),
+            GetPage(name: "/detailsScreen", page: () => DetailsScreen()),
+            GetPage(name: "/cardScreen", page: () => CardScreen()),
           ],
         );
       },

@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 
 import '../widgets/menu_section.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class CardScreen extends StatelessWidget {
+  const CardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("home.title".tr)),
+      appBar: AppBar(title: Text("card screen")),
       drawer: CustomDrawer(),
       body: Center(
         child: Container(
