@@ -18,6 +18,7 @@ import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.da
 import 'package:sweetify_app/view/screens/card_screen.dart';
 import 'package:sweetify_app/view/screens/detils_screen.dart';
 import 'package:sweetify_app/view/screens/home_screen.dart';
+import 'package:sweetify_app/view/screens/main_screen.dart';
 import 'package:sweetify_app/view/screens/payment_card.dart';
 import 'package:sweetify_app/view/screens/privacy_policy_screen.dart';
 import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
@@ -73,6 +74,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/paymentScreen", page: () => PaymentScreen()),
             GetPage(name: "/detailsScreen", page: () => DetailsScreen()),
             GetPage(name: "/cardScreen", page: () => CardScreen()),
+            GetPage(name: "/mainScreen", page: () => MainScreen()),
           ],
         );
       },

@@ -60,7 +60,7 @@ class SignInController extends GetxController {
           "Success",
           data['message'] ?? "Logged in successfully",
         );
-        Get.offAllNamed("/homeScreen");
+        Get.offAllNamed("/mainScreen");
       } else {
         Get.snackbar(
           "Error",

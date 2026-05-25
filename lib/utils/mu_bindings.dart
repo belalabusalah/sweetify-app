@@ -7,6 +7,7 @@ import 'package:sweetify_app/controller/screens_controller/address_controller.da
 import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/support_controller.dart';
 import '../ services/address_services.dart';
+import '../controller/screens_controller/main_navigation_controller.dart';
 
 class MuBindings implements Bindings {
   @override
@@ -25,5 +26,6 @@ class MuBindings implements Bindings {
     // Controllers
     Get.put(SupportController());
     Get.put(AddressController());
+    Get.put(MainNavigationController());
   }
 }
