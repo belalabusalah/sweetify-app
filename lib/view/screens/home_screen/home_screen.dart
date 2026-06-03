@@ -3,9 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sweetify_app/view/screens/home_screen/home_header_section.dart';
 import 'package:sweetify_app/view/screens/home_screen/home_product_section.dart';
-import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
-import 'package:sweetify_app/view/widgets/text_app_custom.dart';
-
 import '../../widgets/menu_section.dart';
 
 class HomeScreen extends StatelessWidget {
