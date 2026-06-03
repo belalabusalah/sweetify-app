@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sweetify_app/controller/screens_controller/main_navigation_controller.dart';
 import 'package:sweetify_app/view/screens/card_screen.dart';
-import 'package:sweetify_app/view/screens/home_screen.dart';
+import 'package:sweetify_app/view/screens/home_screen/home_screen.dart';
 import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
 import 'package:sweetify_app/view/screens/wish_list_screen.dart';
 import 'package:sweetify_app/view/widgets/bottom_navigation_bar_section.dart';

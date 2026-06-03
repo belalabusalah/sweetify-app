@@ -14,8 +14,10 @@ class CustomElevatedButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double radius;
+  final double fontSizeText;
 
   final IconData? icon;
+  final double iconSize;
 
   static const Color defaultColor = Color(0xFFFB741A);
 
@@ -29,6 +31,8 @@ class CustomElevatedButton extends StatelessWidget {
     this.height,
     this.radius =100,
     this.icon,
+     this.fontSizeText=16,
+     this.iconSize=24,
   });
 
   @override
@@ -63,7 +67,7 @@ class CustomElevatedButton extends StatelessWidget {
 
             AppText.body(
               text,
-              fontSize: 16.sp,
+              fontSize: fontSizeText.sp,
               color: textColor ?? Colors.white,
               fontWeight: FontWeight.w500,
             ),
@@ -71,7 +75,7 @@ class CustomElevatedButton extends StatelessWidget {
             Icon(
               icon,
               color: textColor ?? Colors.white,
-              size: 24.sp,
+              size: iconSize.sp,
             ),
           ],
         ),

@@ -40,6 +40,7 @@ dependencies:
   shared_preferences: ^2.5.5
   flutter_html: ^3.0.0
   salomon_bottom_bar: ^3.3.2
+  smooth_page_indicator: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
   assets:
     - images/
     - images/auth_images/
+    - images/home_screen_images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
