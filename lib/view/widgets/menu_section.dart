@@ -3,10 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../controller/screens_controller/profile_controller.dart';
-import '../screens/profile_screen/profile_account_section.dart';
 import '../screens/profile_screen/profile_address_section.dart';
 import '../screens/profile_screen/profile_header_section.dart';
-import '../screens/profile_screen/profile_info_tile_section.dart';
 import '../screens/profile_screen/profile_more_section.dart';
 import '../screens/profile_screen/profile_settings_section.dart';
 
@@ -37,11 +35,8 @@ class CustomDrawer extends StatelessWidget {
                   // ================= HEADER =================
                   SizedBox(height: 20.h),
                   ProfileHeader(),
-                  SizedBox(height: 20.h),
-      
-                  // ================= INFO =================
-                  UserInfoSection(),
-      
+                  SizedBox(height: 8.h),
+
                   // ================= ADDRESS =================
                   AddressSection(),
       
@@ -50,9 +45,7 @@ class CustomDrawer extends StatelessWidget {
       
                   // ================= more section =================
                   ProfileMoreSection(),
-      
-                  // ================= ACCOUNT =================
-                  ProfileAccountSection(),
+
                 ],
               ),
             );
