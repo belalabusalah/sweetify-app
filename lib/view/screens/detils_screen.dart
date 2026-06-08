@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sweetify_app/controller/screens_controller/wish_list_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 
 import '../../../model/get_product/product_model.dart';
@@ -9,7 +10,7 @@ class DetailsScreen extends StatelessWidget {
   DetailsScreen({super.key});
 
   final ProductModel product = Get.arguments as ProductModel;
-
+  final WishListController _wishListController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,53 +87,6 @@ class DetailsScreen extends StatelessWidget {
           ],
         ),
       ),
-
-      /* Container(
-        padding: EdgeInsets.all(16.w),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 10,
-              color: Colors.black12,
-            ),
-          ],
-        ),
-        child: SizedBox(
-          height: 55.h,
-          child: ElevatedButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.shopping_cart_outlined),
-            label: const Text("Add To Cart"),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.orange,
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-            ),
-          ),
-        ),
-      ),*/
-      /*Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Icon(
-              Icons.shopping_cart_outlined,
-              size: 20,
-              color: Color(0xFF483028),
-            ),
-            CustomElevatedButton(
-              text: 'Add To Cart',
-              fontSizeText: 16.sp,
-              height: 55.h,
-              icon: Icons.card_travel,
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),*/
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -144,11 +98,18 @@ class DetailsScreen extends StatelessWidget {
               onPressed: () => Get.back(),
             ),
             actions: [
-              IconButton(
-                icon: const Icon(Icons.favorite_border, color: Colors.red),
-                onPressed: () {
-                  // Handle favorite button press .
-                },
+              Obx(
+                    () => IconButton(
+                  icon: Icon(
+                    _wishListController.isFavorite(product.id)
+                        ? Icons.favorite
+                        : Icons.favorite_border,
+                    color: Colors.red,
+                  ),
+                  onPressed: () {
+                    _wishListController.toggleFavorite(product);
+                  },
+                ),
               ),
             ],
             flexibleSpace: FlexibleSpaceBar(

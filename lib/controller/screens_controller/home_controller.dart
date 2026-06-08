@@ -26,7 +26,7 @@ class HomeController extends GetxController {
   final ProductService _service = ProductService();
 
   var isLoading = false.obs;
-  var products = <ProductModel>[].obs;
+  RxList<ProductModel>  products = <ProductModel>[].obs;
 
   Future<void> getProducts() async {
     try {

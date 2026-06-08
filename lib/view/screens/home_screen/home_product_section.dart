@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sweetify_app/controller/screens_controller/home_controller.dart';
+import 'package:sweetify_app/controller/screens_controller/wish_list_controller.dart';
 import 'package:sweetify_app/view/widgets/text_app_custom.dart';
 
 class HomeProductSection extends StatelessWidget {
   HomeProductSection({super.key});
   final HomeController _homeController = Get.find();
+  final WishListController _wishListController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +86,18 @@ class HomeProductSection extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            child: IconButton(
-                              icon: Icon(Icons.favorite, color: Colors.red),
-                              onPressed: () {},
+                            child: Obx(
+                              () => IconButton(
+                                icon: Icon(
+                                  _wishListController.isFavorite(product.id)
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
+                                  color: Colors.red,
+                                ),
+                                onPressed: () {
+                                  _wishListController.toggleFavorite(product);
+                                },
+                              ),
                             ),
                           ),
                         ),
