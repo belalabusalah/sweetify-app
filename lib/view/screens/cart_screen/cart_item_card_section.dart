@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
+import 'package:AURA/controller/screens_controller/cart_controller.dart';
 
 class CartItemCard extends StatelessWidget {
   late final CartItem item;

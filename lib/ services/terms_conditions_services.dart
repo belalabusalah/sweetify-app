@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:sweetify_app/model/terms_conditions_model.dart';
+import 'package:AURA/model/terms_conditions_model.dart';
 
 
 class TermsConditionsServices {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/product_service.dart';
-import 'package:sweetify_app/model/get_product/product_model.dart';
+import 'package:AURA/%20services/product_service.dart';
+import 'package:AURA/model/get_product/product_model.dart';
 
 class HomeController extends GetxController {
   final PageController pageController = PageController();

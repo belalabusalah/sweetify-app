@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/view/screens/home_screen/home_header_section.dart';
-import 'package:sweetify_app/view/screens/home_screen/home_product_section.dart';
+import 'package:AURA/view/screens/home_screen/home_header_section.dart';
+import 'package:AURA/view/screens/home_screen/home_product_section.dart';
 import '../../widgets/menu_section.dart';
 
 class HomeScreen extends StatelessWidget {

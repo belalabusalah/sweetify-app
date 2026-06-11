@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:sweetify_app/%20services/settings_services.dart';
+import 'package:AURA/%20services/settings_services.dart';
 import '../model/address_model.dart';
 
 class GetAddressListService {

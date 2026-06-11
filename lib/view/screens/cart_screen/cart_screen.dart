@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
-import 'package:sweetify_app/view/screens/cart_screen/cart_bottom_bar_section.dart';
-import 'package:sweetify_app/view/screens/cart_screen/cart_item_card_section.dart';
-import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
-import 'package:sweetify_app/view/widgets/text_app_custom.dart';
+import 'package:AURA/controller/screens_controller/cart_controller.dart';
+import 'package:AURA/view/screens/cart_screen/cart_bottom_bar_section.dart';
+import 'package:AURA/view/screens/cart_screen/cart_item_card_section.dart';
+import 'package:AURA/view/widgets/elevated_button_app_custom.dart';
+import 'package:AURA/view/widgets/text_app_custom.dart';
 
 class CartScreen extends StatelessWidget {
   CartScreen({super.key});

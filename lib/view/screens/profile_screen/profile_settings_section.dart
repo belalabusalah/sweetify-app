@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:sweetify_app/localization/local_controller.dart';
-import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
+import 'package:AURA/localization/local_controller.dart';
+import 'package:AURA/view/widgets/card_tile_profile_custom.dart';
 
 class ProfileSettingsSection extends StatelessWidget {
    ProfileSettingsSection({super.key});

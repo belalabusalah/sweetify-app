@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sweetify_app/view/widgets/text_app_custom.dart';
+import 'package:AURA/view/widgets/text_app_custom.dart';
 
 // import 'app_text.dart';
 

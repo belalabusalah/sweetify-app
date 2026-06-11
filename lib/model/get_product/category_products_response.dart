@@ -1,4 +1,4 @@
-import 'package:sweetify_app/model/get_product/category_model.dart';
+import 'package:AURA/model/get_product/category_model.dart';
 
 import 'applied_filters_model.dart';
 import 'pagination_model.dart';

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:sweetify_app/model/privacy_policy_model.dart';
+import 'package:AURA/model/privacy_policy_model.dart';
 
 
 class PrivacyPolicyServices {

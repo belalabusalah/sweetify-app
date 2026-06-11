@@ -1,14 +1,14 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
-import 'package:sweetify_app/%20services/settings_services.dart';
-import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
-import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/address_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/home_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/support_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/wish_list_controller.dart';
+import 'package:AURA/%20services/settings_services.dart';
+import 'package:AURA/controller/auth_controller/sign_in_controller.dart';
+import 'package:AURA/controller/auth_controller/sign_up_controller.dart';
+import 'package:AURA/controller/screens_controller/address_controller.dart';
+import 'package:AURA/controller/screens_controller/cart_controller.dart';
+import 'package:AURA/controller/screens_controller/home_controller.dart';
+import 'package:AURA/controller/screens_controller/profile_controller.dart';
+import 'package:AURA/controller/screens_controller/support_controller.dart';
+import 'package:AURA/controller/screens_controller/wish_list_controller.dart';
 import '../ services/address_services.dart';
 import '../controller/screens_controller/main_navigation_controller.dart';
 

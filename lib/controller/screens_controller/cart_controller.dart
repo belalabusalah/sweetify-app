@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/model/get_product/product_model.dart';
-import 'package:sweetify_app/view/widgets/text_app_custom.dart';
+import 'package:AURA/model/get_product/product_model.dart';
+import 'package:AURA/view/widgets/text_app_custom.dart';
 
 class CartItem {
   final ProductModel product;

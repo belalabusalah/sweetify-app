@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
-import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
+import 'package:AURA/controller/screens_controller/profile_controller.dart';
+import 'package:AURA/view/widgets/card_tile_profile_custom.dart';
 
 class UserInfoSection extends StatelessWidget {
    UserInfoSection({super.key});

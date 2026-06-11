@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/privacy_policy_services.dart';
-import 'package:sweetify_app/model/privacy_policy_model.dart';
+import 'package:AURA/%20services/privacy_policy_services.dart';
+import 'package:AURA/model/privacy_policy_model.dart';
 
 class PrivacyPolicyScreen extends StatefulWidget {
   const PrivacyPolicyScreen({super.key});

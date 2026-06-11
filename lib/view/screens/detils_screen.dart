@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
-import 'package:sweetify_app/controller/screens_controller/wish_list_controller.dart';
-import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
+import 'package:AURA/controller/screens_controller/cart_controller.dart';
+import 'package:AURA/controller/screens_controller/wish_list_controller.dart';
+import 'package:AURA/view/widgets/elevated_button_app_custom.dart';
 
 import '../../../model/get_product/product_model.dart';
 
