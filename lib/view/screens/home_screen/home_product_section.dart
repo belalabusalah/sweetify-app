@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/home_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/wish_list_controller.dart';
 import 'package:sweetify_app/view/widgets/text_app_custom.dart';
@@ -9,6 +10,7 @@ class HomeProductSection extends StatelessWidget {
   HomeProductSection({super.key});
   final HomeController _homeController = Get.find();
   final WishListController _wishListController = Get.find();
+  final CartController _cartController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -113,12 +115,19 @@ class HomeProductSection extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.shopping_cart_outlined,
-                                color: Colors.red,
+                            child: Obx(
+                              () => IconButton(
+                                icon: Icon(
+                                  _cartController.isInCart(product.id)
+                                      ? Icons.shopping_cart
+                                      : Icons.shopping_cart_outlined,
+                                  color: Colors.red,
+                                ),
+                                onPressed: () {
+                                  _cartController.toggleCart(product);
+                                },
+
                               ),
-                              onPressed: () {},
                             ),
                           ),
                         ),

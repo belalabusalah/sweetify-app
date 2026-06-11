@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 
 import '../../controller/screens_controller/wish_list_controller.dart';
@@ -10,6 +11,7 @@ class WishListScreen extends StatelessWidget {
   WishListScreen({super.key});
 
   final WishListController _wishListController = Get.find();
+  final CartController _cartController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +149,9 @@ class WishListScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        _cartController.addToCart(product);
+                                      },
                                       child: AppText.caption(
                                         "Add to cart",
                                         fontSize: 9.sp,
@@ -158,9 +162,8 @@ class WishListScreen extends StatelessWidget {
                                     /// Delete Favorite
                                     TextButton(
                                       onPressed: () {
-                                        _wishListController.toggleFavorite(
-                                          product,
-                                        );
+                                        _wishListController
+                                            .showRemoveWishlistDialog(product);
                                       },
                                       child: AppText.caption(
                                         "Remove",

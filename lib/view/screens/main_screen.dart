@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sweetify_app/controller/screens_controller/main_navigation_controller.dart';
-import 'package:sweetify_app/view/screens/card_screen.dart';
+import 'package:sweetify_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:sweetify_app/view/screens/home_screen/home_screen.dart';
 import 'package:sweetify_app/view/screens/profile_screen/profile_screen.dart';
 import 'package:sweetify_app/view/screens/wish_list_screen.dart';
@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
   final List<Widget> screens = [
     HomeScreen(),
     WishListScreen(),
-    CardScreen(),
+    CartScreen(),
     ProfileScreen(),
   ];
 

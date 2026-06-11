@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/wish_list_controller.dart';
 import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
 
@@ -11,82 +12,95 @@ class DetailsScreen extends StatelessWidget {
 
   final ProductModel product = Get.arguments as ProductModel;
   final WishListController _wishListController = Get.find();
+  final CartController _cartController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.all(16.w),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(blurRadius: 10, color: Colors.black12)],
-        ),
-        child: Row(
-          spacing: 4.w,
-          children: [
-            Icon(
-              Icons.shopping_cart_outlined,
-              size: 24,
-              color: Color(0xFF483028),
-            ),
-            Container(
-              width: 110.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                color: Color(0xFFF4F4F4),
-                borderRadius: BorderRadius.circular(50.r),
+      bottomNavigationBar: Obx(() {
+        final cartItem = _cartController.getCartItem(product.id);
+        final inCart = cartItem != null;
+        final qty = cartItem?.quantity ?? 0;
+        return Container(
+          padding: EdgeInsets.all(16.w),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [BoxShadow(blurRadius: 10, color: Colors.black12)],
+          ),
+          child: Row(
+            spacing: 4.w,
+            children: [
+              Icon(
+                Icons.shopping_cart_outlined,
+                size: 24,
+                color: Color(0xFF483028),
               ),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Text(
-                      "-",
-                      style: TextStyle(
-                        color: Color(0xFF1C1C1E),
-                        fontWeight: FontWeight.w700,
-                        fontSize: 14.sp,
+              Container(
+                width: 110.w,
+                height: 40.h,
+                decoration: BoxDecoration(
+                  color: Color(0xFFF4F4F4),
+                  borderRadius: BorderRadius.circular(50.r),
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: inCart
+                          ? () {
+                              _cartController.decreaseQty(product.id);
+                            }
+                          : null,
+                      icon: Text(
+                        "-",
+                        style: TextStyle(
+                          color: Color(0xFF1C1C1E),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14.sp,
+                        ),
                       ),
                     ),
-                  ),
-                  Text(
-                    "1",
-                    style: TextStyle(
-                      color: Color(0xFF1C1C1E),
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16.sp,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Text(
-                      "+",
+                    Text(
+                      "$qty",
                       style: TextStyle(
                         color: Color(0xFF1C1C1E),
                         fontWeight: FontWeight.w700,
                         fontSize: 16.sp,
                       ),
                     ),
-                  ),
-                ],
+                    IconButton(
+                      onPressed: () {
+                        _cartController.addToCart(product);
+                      },
+                      icon: Text(
+                        "+",
+                        style: TextStyle(
+                          color: Color(0xFF1C1C1E),
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16.sp,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
 
-            Expanded(
-              child: CustomElevatedButton(
-                text: 'Add To Cart',
-                fontSizeText: 16.sp,
-                height: 45.h,
-                width: 300.w,
-                icon: Icons.card_travel,
-                color: Colors.orange,
-                textColor: Colors.white,
-                onPressed: () {},
+              Expanded(
+                child: CustomElevatedButton(
+                  text: inCart ? 'Remove In Cart' : 'Add To Cart',
+                  fontSizeText: 12.sp,
+                  height: 45.h,
+                  width: 300.w,
+                  icon: Icons.card_travel,
+                  color: inCart ? Colors.red : Colors.orange,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    _cartController.toggleCart(product);
+                  },
+                ),
               ),
-            ),
-          ],
-        ),
-      ),
+            ],
+          ),
+        );
+      }),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -99,7 +113,7 @@ class DetailsScreen extends StatelessWidget {
             ),
             actions: [
               Obx(
-                    () => IconButton(
+                () => IconButton(
                   icon: Icon(
                     _wishListController.isFavorite(product.id)
                         ? Icons.favorite

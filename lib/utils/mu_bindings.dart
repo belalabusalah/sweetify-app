@@ -4,6 +4,7 @@ import 'package:sweetify_app/%20services/settings_services.dart';
 import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
 import 'package:sweetify_app/controller/auth_controller/sign_up_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/address_controller.dart';
+import 'package:sweetify_app/controller/screens_controller/cart_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/home_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
 import 'package:sweetify_app/controller/screens_controller/support_controller.dart';
@@ -31,5 +32,6 @@ class MuBindings implements Bindings {
     Get.put(MainNavigationController());
     Get.put(HomeController());
     Get.put(WishListController());
+    Get.put(CartController());
   }
 }

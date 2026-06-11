@@ -15,7 +15,7 @@ import 'package:sweetify_app/view/screens/auth_screens/sign_in_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/sign_up_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/splash_screen.dart';
 import 'package:sweetify_app/view/screens/auth_screens/determine_entry_screen.dart';
-import 'package:sweetify_app/view/screens/card_screen.dart';
+import 'package:sweetify_app/view/screens/cart_screen/cart_screen.dart';
 import 'package:sweetify_app/view/screens/detils_screen.dart';
 import 'package:sweetify_app/view/screens/home_screen/home_screen.dart';
 import 'package:sweetify_app/view/screens/main_screen.dart';
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/wishListScreen", page: () => WishListScreen()),
             GetPage(name: "/paymentScreen", page: () => PaymentScreen()),
             GetPage(name: "/detailsScreen", page: () => DetailsScreen()),
-            GetPage(name: "/cardScreen", page: () => CardScreen()),
+            GetPage(name: "/cardScreen", page: () => CartScreen()),
             GetPage(name: "/mainScreen", page: () => MainScreen()),
           ],
         );
