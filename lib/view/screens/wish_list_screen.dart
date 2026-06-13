@@ -17,10 +17,6 @@ class WishListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: Icon(Icons.arrow_back_ios_new),
-        ),
         title: const Text("Wishlist"),
         centerTitle: true,
       ),
@@ -41,7 +37,7 @@ class WishListScreen extends StatelessWidget {
                 color: Color(0xFF483028),
                 textColor: Colors.white,
                 onPressed: () {
-                  Get.toNamed("/homeScreen");
+                  Get.toNamed("/shoppingScreen");
                 },
               ),
             ),

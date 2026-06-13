@@ -16,10 +16,6 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.arrow_back_ios_new),
-        ),
         title: const Text("My Cart"),
         centerTitle: true,
       ),
@@ -76,7 +72,7 @@ class CartScreen extends StatelessWidget {
                     color: Color(0xFF483028),
                     textColor: Colors.white,
                     onPressed: () {
-                      Get.toNamed("/homeScreen");
+                      Get.toNamed("/shoppingScreen");
                     },
                   ),
                 ),

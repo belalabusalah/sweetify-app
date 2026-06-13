@@ -1,6 +1,6 @@
+import 'package:AURA/view/screens/shopping_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/instance_manager.dart';
@@ -25,6 +25,7 @@ import 'package:AURA/view/screens/profile_screen/profile_screen.dart';
 import 'package:AURA/view/screens/support_screen.dart';
 import 'package:AURA/view/screens/terms_screen.dart';
 import 'package:AURA/view/screens/wish_list_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/detailsScreen", page: () => DetailsScreen()),
             GetPage(name: "/cardScreen", page: () => CartScreen()),
             GetPage(name: "/mainScreen", page: () => MainScreen()),
+            GetPage(name: "/shoppingScreen", page: () => ShoppingScreen()),
           ],
         );
       },
