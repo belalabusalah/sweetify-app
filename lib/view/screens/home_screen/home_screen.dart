@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
                 sliver: SliverList(
                   delegate: SliverChildListDelegate([
                     HomeHeaderSection(),
-                    SizedBox(height: 16.h),
                     HomeProductSection()
                   ]),
                 ),

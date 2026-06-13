@@ -1,4 +1,3 @@
-import 'package:AURA/view/widgets/elevated_button_app_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -16,56 +15,15 @@ class HomeProductSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              AppText.body(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                "Top trending",
-              ),
-              SizedBox(width: 52.w),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 5,
-                      offset: Offset(-1, -1),
-                    ),
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 5,
-                      offset: Offset(5, 5),
-                    ),
-                  ],
-                ),
-                child: CustomElevatedButton(
-                  text: 'see all  >',
-                  height: 30.h,
-                  width: 140,
-                  fontSizeText: 8.sp,
-                  iconSize: 14.r,
-                  // icon: Icons.sort_rounded,
-                  textColor: Color(0xFF572717),
-                  color: Colors.white,
-                  onPressed: () {
-                    Get.toNamed("/shoppingScreen");
-                  },
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 32),
           Obx(() {
             if (_homeController.isLoading.value) {
               return const Center(child: CircularProgressIndicator());
             }
             return Container(
+              decoration: BoxDecoration(),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -73,7 +31,9 @@ class HomeProductSection extends StatelessWidget {
                   mainAxisSpacing: 16,
                   childAspectRatio: 0.65,
                 ),
-                itemCount: _homeController.products.length,
+                itemCount: _homeController.products.length > 2
+                    ? 2
+                    : _homeController.products.length,
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {

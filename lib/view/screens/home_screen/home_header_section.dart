@@ -13,7 +13,7 @@ class HomeHeaderSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: Colors.white),
-      height: 510.h,
+      height: 580.h,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -186,6 +186,50 @@ class HomeHeaderSection extends StatelessWidget {
             height: 230,
               width: double.infinity,
               image: AssetImage('images/home_screen_images/imageHome.jpg')),
+          SizedBox(height: 40,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AppText.body(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                "Top trending",
+              ),
+              SizedBox(width: 52.w),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(50.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 5,
+                      offset: Offset(-1, -1),
+                    ),
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 5,
+                      offset: Offset(5, 5),
+                    ),
+                  ],
+                ),
+                child: CustomElevatedButton(
+                  text: 'see all  >',
+                  height: 30.h,
+                  width: 140,
+                  fontSizeText: 8.sp,
+                  iconSize: 14.r,
+                  // icon: Icons.sort_rounded,
+                  textColor: Color(0xFF572717),
+                  color: Colors.white,
+                  onPressed: () {
+                    Get.toNamed("/shoppingScreen");
+                  },
+                ),
+              ),
+            ],
+          ),
+
         ],
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:AURA/controller/screens_controller/shopping_controller.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:AURA/%20services/settings_services.dart';
@@ -33,5 +34,6 @@ class MuBindings implements Bindings {
     Get.put(HomeController());
     Get.put(WishListController());
     Get.put(CartController());
+    Get.put(ShoppingController());
   }
 }
