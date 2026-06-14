@@ -26,6 +26,8 @@ import 'package:AURA/view/screens/support_screen.dart';
 import 'package:AURA/view/screens/terms_screen.dart';
 import 'package:AURA/view/screens/wish_list_screen.dart';
 
+import 'view/screens/sheckout_screen.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -77,6 +79,7 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/cardScreen", page: () => CartScreen()),
             GetPage(name: "/mainScreen", page: () => MainScreen()),
             GetPage(name: "/shoppingScreen", page: () => ShoppingScreen()),
+            GetPage(name: "/checkoutScreen", page: () => CheckoutScreen()),
           ],
         );
       },

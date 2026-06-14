@@ -7,7 +7,7 @@ class CartItemCard extends StatelessWidget {
 
   CartItemCard({required this.item});
 
-  final CartController controller = Get.find();
+  final CartController cartController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class CartItemCard extends StatelessWidget {
                       icon: Icons.remove,
                       onTap: ()  {
                         item.quantity > 1?
-                        controller.decreaseQty(item.product.id): controller. showRemoveCartDialog(item.product);;
+                        cartController.decreaseQty(item.product.id): cartController. showRemoveCartDialog(item.product);;
                       }
                     ),
 
@@ -88,7 +88,7 @@ class CartItemCard extends StatelessWidget {
 
                     _qtyButton(
                       icon: Icons.add,
-                      onTap: () => controller.increaseQty(item.product.id),
+                      onTap: () => cartController.increaseQty(item.product.id),
                     ),
                   ],
                 )
@@ -99,25 +99,7 @@ class CartItemCard extends StatelessWidget {
           // delete
           IconButton(
             onPressed: () {
-             controller. showRemoveCartDialog(item.product);
-             /* Get.defaultDialog(
-                title: "Remove from cart",
-                middleText: "Are you sure you want to remove this product?",
-                actions: [
-                  TextButton(
-                    onPressed: () => Get.back(),
-                    child: Text("Cancel"),
-                  ),
-
-                  TextButton(
-                    onPressed: () {
-                      Get.back(closeOverlays: true);
-                      controller.removeItem(item.product.id);
-                    },
-                    child: Text("Remove"),
-                  ),
-                ],
-              );*/
+             cartController. showRemoveCartDialog(item.product);
             },
             icon: const Icon(Icons.delete, color: Colors.red),
           )

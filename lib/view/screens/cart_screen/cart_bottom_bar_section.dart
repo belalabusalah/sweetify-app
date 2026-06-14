@@ -44,6 +44,7 @@ class CartBottomBar extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               Get.snackbar("Checkout", "Proceeding to payment...");
+              Get.toNamed("/checkoutScreen");
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.orange,
