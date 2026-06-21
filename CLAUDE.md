@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 flutter pub get          # Install dependencies
-flutter run              # Run the app on connected device/emulator
+flutter run              # Run the app_routes on connected device/emulator
 flutter analyze          # Static analysis (flutter_lints)
 flutter test             # Run all tests
 flutter test test/widget_test.dart  # Run a single test file

@@ -13,6 +13,7 @@ class CartItem {
 
 class CartController extends GetxController {
   RxList<CartItem> cartItems = <CartItem>[].obs;
+  double shippingCost = 5.0;
 
   bool isInCart(int productId) {
     return cartItems.any((item) => item.product.id == productId);

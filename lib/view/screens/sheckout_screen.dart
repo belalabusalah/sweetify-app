@@ -1,3 +1,4 @@
+import 'package:AURA/controller/screens_controller/address_controller.dart';
 import 'package:AURA/controller/screens_controller/cart_controller.dart';
 import 'package:AURA/view/widgets/elevated_button_app_custom.dart';
 import 'package:AURA/view/widgets/text_app_custom.dart';
@@ -8,6 +9,8 @@ import 'package:get/get.dart';
 class CheckoutScreen extends StatelessWidget {
   CheckoutScreen({super.key});
   final CartController _cartController = Get.find();
+  final AddressController _addressController = Get.find();
+double shippingCost = 5.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +64,6 @@ class CheckoutScreen extends StatelessWidget {
           SizedBox(height: 25.h),
 
           sectionTitle("Order Summary"),
-
           Obx(() {
             return _cartController.cartItems.isEmpty
                 ? AppText.title("No items in cart")
@@ -282,14 +284,13 @@ class CheckoutScreen extends StatelessWidget {
           SizedBox(height: 25.h),
 
           sectionTitle("Shipping Address"),
-
           Container(
             padding: EdgeInsets.all(12.w),
             decoration: cardDecoration(),
 
             child: Row(
               children: [
-                Icon(Icons.location_on_outlined, size: 22.sp),
+                Icon(Icons.location_on_outlined, size: 32.sp,color: Colors.grey,),
 
                 SizedBox(width: 10.w),
 
@@ -299,7 +300,7 @@ class CheckoutScreen extends StatelessWidget {
 
                     children: [
                       Text(
-                        "Home",
+                        _addressController.addresses.first.title,
                         style: TextStyle(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w600,
@@ -307,14 +308,12 @@ class CheckoutScreen extends StatelessWidget {
                       ),
 
                       Text(
-                        "123 Main street, New York",
+                        "${_addressController.addresses.first.street},${_addressController.addresses.first.addressType},${_addressController.addresses.first.addressType}, ${_addressController.addresses.first.city}",
                         style: TextStyle(fontSize: 11.sp, color: Colors.grey),
                       ),
                     ],
                   ),
                 ),
-
-                Icon(Icons.add_circle_outline, size: 22.sp),
               ],
             ),
           ),
@@ -322,7 +321,6 @@ class CheckoutScreen extends StatelessWidget {
           SizedBox(height: 25.h),
 
           sectionTitle("Shipping Method"),
-
           shippingTile(
             title: "Standard Shipping",
             subtitle: "Delivery within 3-5 days",
@@ -348,13 +346,13 @@ class CheckoutScreen extends StatelessWidget {
 
             child: Column(
               children: [
-                summaryRow("Subtotal", "\$35.00"),
+                summaryRow("Subtotal", "${double.parse(_cartController.totalPrice.toStringAsFixed(2))} \$"),
 
-                summaryRow("Shipping", "\$5.00"),
+                summaryRow("Shipping", "${ _cartController.shippingCost} \$"),
 
                 Divider(),
 
-                summaryRow("Total", "\$40.00", bold: true),
+                summaryRow("Total", "${double.parse(_cartController.totalPrice.toStringAsFixed(2))+_cartController.shippingCost} \$", bold: true),
               ],
             ),
           ),
