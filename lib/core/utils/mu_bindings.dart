@@ -1,3 +1,5 @@
+import 'package:AURA/%20services/forget_password_services.dart';
+import 'package:AURA/controller/auth_controller/forget_password_controller.dart';
 import 'package:AURA/controller/screens_controller/shopping_controller.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
@@ -26,6 +28,7 @@ class MuBindings implements Bindings {
 
     // Services — must be registered before their dependent controllers
     Get.put(GetAddressListService());
+    Get.lazyPut(() => ForgetPasswordServices(),fenix: true);
 
     // Controllers
     Get.put(SupportController());
@@ -35,5 +38,6 @@ class MuBindings implements Bindings {
     Get.put(WishListController());
     Get.put(CartController());
     Get.put(ShoppingController());
+    Get.put(ForgetPasswordController(Get.find()));
   }
 }

@@ -1,12 +1,15 @@
 import 'package:AURA/view/widgets/elevated_button_app_custom.dart';
+import 'package:AURA/view/widgets/text_app_custom.dart';
 import 'package:AURA/view/widgets/text_form_faild_app_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import '../../../controller/auth_controller/forget_password_controller.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   ForgotPasswordScreen({super.key});
 
-  final TextEditingController emailController = TextEditingController();
+  final ForgetPasswordController _controllerLogin = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,18 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 60.h),
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.blue.withValues(alpha: .1),
+                        borderRadius: BorderRadius.circular(24),
+                      ),
+                        child: AppText.subtitle("first step",textAlign: TextAlign.left,)),
+                  ],
+                ),
+                SizedBox(height: 30.h),
 
                 // Icon / Logo
                 Container(
@@ -63,7 +77,7 @@ class ForgotPasswordScreen extends StatelessWidget {
 
                 // Email Field
                 CustomTextFormField(
-                  controller:emailController ,
+                  controller:_controllerLogin.emailController ,
                   hintText: 'example@email.com',
                   labelText: "Email Address",
                   keyboardType: TextInputType.emailAddress,
@@ -84,9 +98,10 @@ class ForgotPasswordScreen extends StatelessWidget {
                   text: 'Send Reset password',
                   radius: 20,
                   color: Color(0xFF483028),
-                  onPressed: () {},
+                  onPressed: () {
+                    _controllerLogin.sendForgetPassword();
+                  },
                 ),
-
                 SizedBox(height: 25.h),
 
                 // Back Login button
