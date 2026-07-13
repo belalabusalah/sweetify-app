@@ -4,6 +4,7 @@ import 'package:AURA/view/screens/address_form_screen.dart';
 import 'package:AURA/view/screens/address_screen.dart';
 import 'package:AURA/view/screens/cart_screen/cart_screen.dart';
 import 'package:AURA/view/screens/detils_screen.dart';
+import 'package:AURA/view/screens/auth_screens/forget_password.dart';
 import 'package:AURA/view/screens/main_screen.dart';
 import 'package:AURA/view/screens/payment_card.dart';
 import 'package:AURA/view/screens/privacy_policy_screen.dart';
@@ -43,5 +44,6 @@ class AppRoutes {
     GetPage(name: RoutePaths.mainScreen, page: () => MainScreen()),
     GetPage(name: RoutePaths.shoppingScreen, page: () => ShoppingScreen()),
     GetPage(name: RoutePaths.checkoutScreen, page: () => CheckoutScreen()),
+    GetPage(name: RoutePaths.forgetPassword, page: () => ForgotPasswordScreen()),
   ];
 }
