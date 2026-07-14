@@ -1,4 +1,5 @@
 import 'package:AURA/%20services/forget_password_services.dart';
+import 'package:AURA/view/app_routes/route_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,13 +35,12 @@ class ForgetPasswordController extends GetxController {
         );
 
         // لاحقاً الانتقال لشاشة OTP
-
-        // Get.toNamed(
-        // "/verifyOtp",
-        // arguments:{
-        //    "email":emailController.text
-        // }
-        // );
+        Get.toNamed(
+            RoutePaths.verifyOtpScreen,
+            arguments:{
+              "email":emailController.text
+            }
+        );
       }
     }catch(e){
       Get.snackbar(

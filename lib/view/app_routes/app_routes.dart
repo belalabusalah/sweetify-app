@@ -2,6 +2,7 @@ import 'package:AURA/view/app_routes/route_paths.dart';
 import 'package:AURA/view/screens/about_us_screen.dart';
 import 'package:AURA/view/screens/address_form_screen.dart';
 import 'package:AURA/view/screens/address_screen.dart';
+import 'package:AURA/view/screens/auth_screens/verify_otp_screen.dart';
 import 'package:AURA/view/screens/cart_screen/cart_screen.dart';
 import 'package:AURA/view/screens/detils_screen.dart';
 import 'package:AURA/view/screens/auth_screens/forget_password_screen.dart';
@@ -13,6 +14,7 @@ import 'package:AURA/view/screens/shopping_screen.dart';
 import 'package:AURA/view/screens/support_screen.dart';
 import 'package:AURA/view/screens/terms_screen.dart';
 import 'package:AURA/view/screens/wish_list_screen.dart';
+import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
 import '../screens/auth_screens/determine_entry_screen.dart';
 import '../screens/auth_screens/sign_in_screen.dart';
@@ -45,5 +47,10 @@ class AppRoutes {
     GetPage(name: RoutePaths.shoppingScreen, page: () => ShoppingScreen()),
     GetPage(name: RoutePaths.checkoutScreen, page: () => CheckoutScreen()),
     GetPage(name: RoutePaths.forgetPassword, page: () => ForgotPasswordScreen()),
+    GetPage(name: RoutePaths.verifyOtpScreen, page: () => VerifyOtpScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 200),
+      curve: Curves.slowMiddle,
+    ),
   ];
 }
