@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/address_services.dart';
-import 'package:sweetify_app/model/address_model.dart';
+import 'package:AURA/%20services/address_services.dart';
+import 'package:AURA/model/address_model.dart';
 
 class AddressController extends GetxController {
   final GetAddressListService _service = Get.find<GetAddressListService>();

@@ -109,6 +109,9 @@ class MyLocal implements Translations {
       "address.success_update": "تم تحديث العنوان بنجاح",
       "address.error": "حدث خطأ، يرجى المحاولة مرة أخرى",
 
+      //================ checkout screen ====================
+      "checkout.address": "عنوان التسوق"
+
     },
     "en": {
       // =============== splash ===============
@@ -155,7 +158,7 @@ class MyLocal implements Translations {
       "profile.manage_addresses": "Manage Addresses",
       "profile.settings": "Settings",
       "profile.theme": "Theme",
-      "profile.change_theme": "Change app theme",
+      "profile.change_theme": "Change app_routes theme",
       "profile.language": "Language",
       "profile.lang_options": "English / Arabic",
       "profile.more": "More",
@@ -215,6 +218,9 @@ class MyLocal implements Translations {
       "address.success_add": "Address added successfully",
       "address.success_update": "Address updated successfully",
       "address.error": "Something went wrong, please try again",
+
+      //================ checkout screen ====================
+      "checkout.address": "Address Shopping"
 
     },
   };

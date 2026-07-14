@@ -6,8 +6,8 @@ import 'dart:convert';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:http/http.dart' as http;
-import 'package:sweetify_app/%20services/settings_services.dart';
-import 'package:sweetify_app/model/support_model.dart';
+import 'package:AURA/%20services/settings_services.dart';
+import 'package:AURA/model/support_model.dart';
 
 class SupportService {
   final String baseUrl = "https://tullana.toldpath.com/api";

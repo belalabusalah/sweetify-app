@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:sweetify_app/controller/auth_controller/sign_in_controller.dart';
-import 'package:sweetify_app/view/widgets/elevated_button_app_custom.dart';
-import 'package:sweetify_app/view/widgets/text_app_custom.dart';
-import 'package:sweetify_app/view/widgets/text_form_faild_app_custom.dart';
+import 'package:AURA/controller/auth_controller/sign_in_controller.dart';
+import 'package:AURA/view/widgets/elevated_button_app_custom.dart';
+import 'package:AURA/view/widgets/text_app_custom.dart';
+import 'package:AURA/view/widgets/text_form_faild_app_custom.dart';
 
 class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
@@ -56,7 +53,9 @@ class SignInScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed("/forgetPassword");
+                  },
                   child: AppText.body(
                     "auth.forgot_password".tr,
                     color: Color(0xFFA99577),

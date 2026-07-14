@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:sweetify_app/model/about_us_model.dart';
+import 'package:AURA/model/about_us_model.dart';
 
 
 class AboutUsService {

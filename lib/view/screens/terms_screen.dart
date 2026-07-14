@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/terms_conditions_services.dart';
-import 'package:sweetify_app/model/terms_conditions_model.dart';
+import 'package:AURA/%20services/terms_conditions_services.dart';
+import 'package:AURA/model/terms_conditions_model.dart';
 
 class TermsConditionsScreen extends StatefulWidget {
   const TermsConditionsScreen({super.key});

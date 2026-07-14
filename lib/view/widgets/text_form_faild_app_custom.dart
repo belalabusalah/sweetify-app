@@ -5,6 +5,7 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     required this.hintText,
+    this.labelText,
     this.prefixIcon,
     this.suffixIcon,
     this.controller,
@@ -16,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
   });
 
   final String hintText;
+  final String? labelText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
@@ -35,6 +37,7 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: onChanged,
       maxLines:maxLines,
       decoration: InputDecoration(
+        labelText:labelText,
         hintText: hintText,
         hintStyle: TextStyle(
           fontSize: 12.sp,
@@ -55,27 +58,27 @@ class CustomTextFormField extends StatelessWidget {
         ),
 
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(color: Color(0xFF8C8C90), width: 1.5),
         ),
 
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(color: Color(0xFF8C8C90), width: 1.5),
         ),
 
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(20),
           borderSide: const BorderSide(color: Color(0xFF8C8C90), width: 1.5),
         ),
 
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(20),
           borderSide: const BorderSide(color: Colors.red, width: 1.5),
         ),
 
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(20),
           borderSide: const BorderSide(color: Colors.red, width: 1.5),
         ),
       ),

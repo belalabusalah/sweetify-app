@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/settings_services.dart';
+import 'package:AURA/%20services/settings_services.dart';
 
 
 

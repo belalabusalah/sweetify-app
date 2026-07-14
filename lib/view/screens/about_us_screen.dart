@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/about_us_services.dart';
+import 'package:AURA/%20services/about_us_services.dart';
 
 class AboutUsScreen extends StatefulWidget {
   const AboutUsScreen({super.key});

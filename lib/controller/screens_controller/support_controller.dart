@@ -3,8 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/%20services/support_services.dart';
-import 'package:sweetify_app/model/support_model.dart';
+import 'package:AURA/%20services/support_services.dart';
+import 'package:AURA/model/support_model.dart';
 
 class SupportController extends GetxController {
   final SupportService _service = SupportService();

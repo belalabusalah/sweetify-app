@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 flutter pub get          # Install dependencies
-flutter run              # Run the app on connected device/emulator
+flutter run              # Run the app_routes on connected device/emulator
 flutter analyze          # Static analysis (flutter_lints)
 flutter test             # Run all tests
 flutter test test/widget_test.dart  # Run a single test file
@@ -45,9 +45,15 @@ Each feature uses a two-layer pattern:
 
 ### Navigation
 
-Named routes are defined in `lib/main.dart`. Use `Get.toNamed('/routeName')` / `Get.offAllNamed(...)`. Route names follow the pattern `/<ScreenName>` in camelCase (e.g., `/signInScreen`).
+Named routes are defined in `lib/main.dart`. Use `Get.toNamed('/routeName')` / `Get.offAllNamed(...)`. Route names follow the pattern `/<ScreenName>` in camelCase.
+
+Full route list: `/splashScreen`, `/determineEntryScreen`, `/signInScreen`, `/signUpScreen`, `/homeScreen`, `/profileScreen`, `/aboutUsScreen`, `/privacyPolicyScreen`, `/termsConditionsScreen`, `/supportScreen`, `/addressScreen`, `/addressFormScreen`, `/wishListScreen`, `/paymentScreen`, `/detailsScreen`, `/cardScreen`.
 
 To pass data between screens use `Get.toNamed('/route', arguments: value)` and read it back with `Get.arguments` in `initState`. `AddressFormScreen` uses this: a `null` argument means add-mode, an `AddressData` argument means edit-mode.
+
+### Bottom navigation + drawer
+
+`HomeScreen` hosts the main shell. Bottom tab index lives in `MainNavigationController` (`currentIndex.obs`). `CustomBottomNavigationBar` (in `view/widgets/bottom_navigation_bar_section.dart`) wraps `salomon_bottom_bar` and takes `currentIndex` + `onTap` from the controller via `Obx`. The side drawer (`CustomDrawer` in `view/widgets/menu_section.dart`) renders the full profile UI using the same profile sub-components as `ProfileScreen`.
 
 ### Responsive UI
 
@@ -55,13 +61,18 @@ All sizes must go through `flutter_screenutil`. The design base is **375 × 667*
 
 ### Reusable widgets
 
-Three shared widgets cover almost all UI needs — prefer them over raw Flutter widgets:
-
 | Widget | File | Use |
 |---|---|---|
 | `AppText` | `view/widgets/text_app_custom.dart` | Text with named factories: `.title()`, `.subtitle()`, `.body()`, `.caption()` |
 | `CustomElevatedButton` | `view/widgets/elevated_button_app_custom.dart` | Styled primary button |
 | `CustomTextFormField` | `view/widgets/text_form_faild_app_custom.dart` | Styled input field with optional validator |
+| `CustomBottomNavigationBar` | `view/widgets/bottom_navigation_bar_section.dart` | `salomon_bottom_bar`-based tab bar; requires `currentIndex` + `onTap` |
+| `ProfileTile` | `view/widgets/card_tile_profile_custom.dart` | Icon + title + optional subtitle list tile used in profile/drawer |
+| `CustomDrawer` | `view/widgets/menu_section.dart` | Slide-out drawer reusing all `profile_screen/` sub-components |
+
+### Profile screen decomposition
+
+`ProfileScreen` and `CustomDrawer` share the same sub-widgets from `view/screens/profile_screen/`: `ProfileHeader`, `UserInfoSection` (in `profile_info_tile.dart`), `AddressSection` (in `profile_address_section.dart`), `ProfileSettingsSection`, `ProfileMoreSection`, `ProfileAccountSection`. Add new profile sections there and import them in both places.
 
 ### Localization
 

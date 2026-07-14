@@ -1,15 +1,14 @@
 import 'dart:convert';
+import 'package:AURA/%20services/address_services.dart';
 import 'package:http/http.dart' as http;
-import 'package:sweetify_app/model/privacy_policy_model.dart';
+import 'package:AURA/model/privacy_policy_model.dart';
 
 
 class PrivacyPolicyServices {
 
-  String baseUrl ="https://tullana.toldpath.com/api";
-
   Future<PrivacyPolicyModel> getPrivacyPolicy() async {
     final response = await http.get(
-      Uri.parse("$baseUrl/customer/profile/help-center/privacy-policy"),
+      Uri.parse("${ApiConfig.baseUrl}/customer/profile/help-center/privacy-policy"),
     );
 
     if (response.statusCode == 200) {

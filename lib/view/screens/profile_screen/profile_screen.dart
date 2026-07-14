@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/controller/screens_controller/profile_controller.dart';
-import 'package:sweetify_app/view/screens/profile_screen/profile_account_section.dart';
-import 'package:sweetify_app/view/screens/profile_screen/profile_address_section.dart';
-import 'package:sweetify_app/view/screens/profile_screen/profile_header.dart';
-import 'package:sweetify_app/view/screens/profile_screen/profile_info_tile.dart';
-import 'package:sweetify_app/view/screens/profile_screen/profile_more_section.dart';
-import 'package:sweetify_app/view/screens/profile_screen/profile_settings_section.dart';
-import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
-import 'package:sweetify_app/view/widgets/text_app_custom.dart';
+import 'package:AURA/controller/screens_controller/profile_controller.dart';
+import 'package:AURA/view/screens/profile_screen/profile_account_section.dart';
+import 'package:AURA/view/screens/profile_screen/profile_address_section.dart';
+import 'package:AURA/view/screens/profile_screen/profile_header_section.dart';
+import 'package:AURA/view/screens/profile_screen/profile_info_tile_section.dart';
+import 'package:AURA/view/screens/profile_screen/profile_more_section.dart';
+import 'package:AURA/view/screens/profile_screen/profile_settings_section.dart';
+import 'package:AURA/view/widgets/card_tile_profile_custom.dart';
+import 'package:AURA/view/widgets/text_app_custom.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({super.key});

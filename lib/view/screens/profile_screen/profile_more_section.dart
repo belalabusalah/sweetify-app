@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sweetify_app/view/widgets/card_tile_profile_custom.dart';
+import 'package:AURA/view/widgets/card_tile_profile_custom.dart';
 
 class ProfileMoreSection extends StatelessWidget {
   const ProfileMoreSection({super.key});
