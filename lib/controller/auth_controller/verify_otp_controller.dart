@@ -1,4 +1,5 @@
 import 'package:AURA/%20services/verify_otp_services.dart';
+import 'package:AURA/view/app_routes/route_paths.dart';
 import 'package:get/get.dart';
 
 class VerifyOtpController extends GetxController {
@@ -24,13 +25,13 @@ class VerifyOtpController extends GetxController {
         );
 
         // التوجيه إلى شاشة تعيين كلمة المرور الجديدة مع تمرير الإيميل والـ token
-        // Get.toNamed(
-        //   RoutePaths.resetPasswordScreen, // قمنا بتعديلها لتذهب لـ resetPasswordScreen بدلاً من verifyOtpScreen نفسه
-        //   arguments: {
-        //     "email": email,
-        //     "token": otpCode,
-        //   },
-        // );
+        Get.toNamed(
+          RoutePaths.resetPasswordScreen, // قمنا بتعديلها لتذهب لـ resetPasswordScreen بدلاً من verifyOtpScreen نفسه
+          arguments: {
+            "email": email,
+            "token": otpCode,
+          },
+        );
       } else {
         Get.snackbar(
           "Error",

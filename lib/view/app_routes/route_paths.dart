@@ -22,5 +22,6 @@ class RoutePaths {
   static const String checkoutScreen = "/checkoutScreen";
   static const String forgetPassword = "/forgetPassword";
   static const String verifyOtpScreen = "/verifyOtpScreen";
+  static const String resetPasswordScreen = "/resetPasswordScreen";
 
 }

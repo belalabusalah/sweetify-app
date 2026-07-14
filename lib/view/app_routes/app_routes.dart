@@ -2,6 +2,7 @@ import 'package:AURA/view/app_routes/route_paths.dart';
 import 'package:AURA/view/screens/about_us_screen.dart';
 import 'package:AURA/view/screens/address_form_screen.dart';
 import 'package:AURA/view/screens/address_screen.dart';
+import 'package:AURA/view/screens/auth_screens/reset_password_screen.dart';
 import 'package:AURA/view/screens/auth_screens/verify_otp_screen.dart';
 import 'package:AURA/view/screens/cart_screen/cart_screen.dart';
 import 'package:AURA/view/screens/detils_screen.dart';
@@ -52,5 +53,7 @@ class AppRoutes {
       transitionDuration: const Duration(milliseconds: 200),
       curve: Curves.slowMiddle,
     ),
+    GetPage(name: RoutePaths.resetPasswordScreen, page: () => ResetPasswordScreen()),
+
   ];
 }
